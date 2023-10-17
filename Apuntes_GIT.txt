@@ -1,0 +1,51 @@
+>> C O M A N D O S   B A S I C O S <<
+
+echo > "nombre"          :/ Crear archivo desde cmd
+code .                   :/ Abrir la carpeta en VSC
+git status               :/ Revisar novedades en el repo
+git add .                :/ Agrega todos los archivos
+git commit -m            :/ Mensaje en el repo al hacer un commit
+git log                  :/ Mirar mis commits
+git checkout + codecommit      :/Ir a primer commit y realizar cambios en él (cambios en el code fuente VSC)
+git branch               :/ Ver las ramas disponibles (HEAD, MASTER)
+git switch master        :/ Ir a rama MASTER
+git switch -c "namerama" :/ Crear una nueva rama
+cls                      :/ Limpiar la línea de comandos
+
+
+
+>> CREAR ó CLONAR REPOSITORIO LOCAL <<
+
+git init                  :/ Crea repositorio local nuevo  (carpeta .git)
+git clone + URL repo      :/ Clona un repo de github en nuestro pc
+git pull                  :/ Sincroniza el repo en github con el local
+
+
+
+>> CONECTAR CON GITHUB <<
+---> Primero crear el repositorio en GitHub
+
+git remote add origin + URL repo    :/ Conectar el repo local con github
+git push origin master              :/ Subir rama MASTER a repo en github
+
+
+
+>>> PASOS PARA SUBIR REPO A GITHUB <<<
+
+1) crear repo en github
+2) abre la carpeta donde quieres crear el repo local
+3) abre git bash
+4) git init (para crear repo local)
+5) git status (ver modificaciones)
+6) git add .  (guardar cambios)
+7) git commit -m "nombre"  (nombre del commit)
+8) git remote add origin + URL repo  (conectar repo local con github)
+9) git push -u origin master  
+
+--> Suponiendo que hiciste cambios en el code fuente de algun archivo
+
+10) git status
+11) git add .
+12) git commit -m "(nombre del cambio que hiciste)"
+13) git push -u origin master  (sincronizar)
+14) recarga pagina GitHub
