@@ -49,3 +49,6 @@ git push origin master              :/ Subir rama MASTER a repo en github
 12) git commit -m "(nombre del cambio que hiciste)"
 13) git push -u origin master  (sincronizar)
 14) recarga pagina GitHub
+
+ESTE ES UN NUEVO CAMBIO Y DEBO HACER EL COMMIT
+DEBE APARECER SUBIDO EN GIRHUB
