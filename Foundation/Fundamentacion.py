@@ -98,3 +98,37 @@ b == a*2  # --> True
 "Hola" == "Hola"  # --> True
 c = "Hola"
 c[0] == "H"  # --> True
+
+
+
+
+
+#  >>>    C O N T R O L A N D O    E L    F L U J O    <<<  #
+
+#> Condicionales:
+    # if : si se cumple algo
+    # else : sino se cumple algo
+    # elif : sino si...
+
+if True:
+    print("Se cumple la condición")
+
+else:
+    print("No se cumple la condición")
+
+# Example:
+a = 5
+if a == 2:               # --> si la condición es falsa, se omite automaticamente las expresiones indentadas dentro de dicha condición
+    print("a vale 2")
+else:
+    print("a es diferente de 2")
+
+
+n = int(input("Ingrese un número entero: "))
+if n % 2 == 0:
+    print(n, " es un número par")
+else:
+    print(n, " es impar")
+
+if True:
+    pass  # --> Bloque de code vacío, si se cumple la condición se almacena el True pero no se hace nada
