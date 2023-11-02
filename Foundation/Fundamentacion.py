@@ -64,3 +64,37 @@ valor = int(valor)  # cambiamos el tipo de dato
 valor += 400  # --> 500 
 
 value = float( input("Introduce un valor entero o decimal: "))   #  Acortar expresiones  (menos líneas de código)
+
+
+
+
+#  >>>    O P E R A D O R E S    <<<  #
+
+#> Lógicos:
+    # Verdadero (True) y Falso (False)  <-- Veracidad de una sentencia o expresión
+    # not (negación)
+    # and (conjunción)
+    # or (disyunción)
+a = 13
+(a > 10) and (a < 20)  # --> True
+("H" == "H") or (1 > 2) # --> True  (si al menos uno es verdad entonces es True)
+"Estoy vivo"  # --> True
+    # 1 + 1 = 3 ---> False
+
+#> Relacionales:
+    # Son comparadores --> 
+3 == 3  # --> Igual que..
+2 != 3  # --> distinto de..
+5 > 1  # --> mayor que
+2 < 6  # --> menor que
+3 >= 2  # --> mayor o igual 
+1 <= 3  # --> menor o igual 
+
+a = 10
+b = 5
+a > b  # --> True
+b != a # --> True
+b == a*2  # --> True
+"Hola" == "Hola"  # --> True
+c = "Hola"
+c[0] == "H"  # --> True
