@@ -296,3 +296,32 @@ lista = [1,2,3,3,2,1]
 # se quiere eliminar los elementos repetidos de la lista
 lista = list( set(lista) )
 
+
+
+
+
+#  >>>    D I C C I O N A R I O S    <<<  #
+
+#  clave : valor
+# del() : eliminar (clave:valor) del diccionario
+# mi_diccionario["género"] = "masculino"  : agregar cosas
+# .keys() : obtener lista de claves del diccionario
+# .values() : obtener lista de valores
+# .items() : obtener lista de pares (clave:valor)
+
+
+colores = {'amarillo':'yellow','azul':'blue','rojo':'red','blanco':'white'}
+
+colores['amarillo']  # --> 'yellow'
+colores['azul'] = 'BLUE'  # redefinir el valor de una clave
+
+# iterar en el dict
+for clave,valor in colores.items():
+    print(clave, valor)
+
+
+# crar una lista de personajes con sus características
+personajes = []
+p1= {'nombre':'Gandalf','clase':'mago','raza':'humano'}
+personajes.append(p1) # añadir personaje a la lista de personajes
+
