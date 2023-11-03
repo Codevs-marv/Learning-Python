@@ -44,6 +44,9 @@ pares.append(12)  # --> [...8,10,12]
 # .index() : para buscar elemento y posición
 pares.index(5)  # --> retorna 2 (indice del elemento)
 
+# .pop() : eliminar ultimo elemento
+pares.pop() # --> [2,4,6,8]
+
 len(pares)  # --> 6
 
 # Listas Anidadas
@@ -325,3 +328,36 @@ personajes = []
 p1= {'nombre':'Gandalf','clase':'mago','raza':'humano'}
 personajes.append(p1) # añadir personaje a la lista de personajes
 
+
+
+
+
+#  >>>    P I L A S   Y   C O L A S    <<<  #
+
+#> Pilas
+# 'primero en llegar --> último en salir'
+
+pila = [3,4,5]
+
+pila.append(6)
+pila.append(7)
+pila.pop() # saca el último elemento ingresado
+
+# guardar elemento sacado
+n = pila.pop() # --> n = 7
+
+
+#> Colas
+# 'primeor en llegar --> primero en salir'
+
+from collections import deque  # importar siempre que se trabaje con colas
+
+cola = deque() # cola vacía
+cola = deque(['Hector','Marco','Juan'])
+
+# .append() : añadir elementos
+cola.append('Maria')
+cola.append('Armando')
+
+# .popoleft() : eliminar primer elemento por izquierda
+cola.popleft() # saca a Hector
