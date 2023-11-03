@@ -132,3 +132,103 @@ else:
 
 if True:
     pass  # --> Bloque de code vacío, si se cumple la condición se almacena el True pero no se hace nada
+
+
+#> match :  Funciona de manera similar a una serie de declaraciones if...elif...else, pero es más conciso y legible.
+# case patronN if condicion:  Puedes incluir una condición después de un patrón para realizar una comprobación adicional antes de ejecutar el código.
+# case _:  El patrón _ es un patrón comodín que coincide con cualquier cosa. Se utiliza como un caso de "por defecto" cuando ninguno de los patrones anteriores coincide.
+
+def obtener_tipo(valor):
+    match valor:
+        case str(s) if s.isnumeric():
+            return "Es un número como cadena"
+        case int():
+            return "Es un número entero"
+        case float(f) if f.is_integer():
+            return "Es un número decimal que parece entero"
+        case float():
+            return "Es un número decimal"
+        case _:
+            return "No es un número"
+
+resultado = obtener_tipo(42)
+print(resultado)
+
+
+
+#> BUCLE WHILE:
+# --> mientras..
+# Iterar: repetir algo varias veces
+
+c = 0
+while c < 5:
+    c += 1
+    print("c vale ", c)
+else:                             # --> se puede usar un "else" en caso de que el while no se cumpla
+    print("Se ha completado toda la iteración y c vale ", c) 
+
+
+
+#> Break 
+c = 0
+while c < 5:
+    c += 1
+    if (c == 2):
+        print("Rompemos el bucle cuando c vale ", c)
+        break           # ---> terminar el bucle
+    print("c vale ", c)
+else:                            
+    print("Se ha completado toda la iteración y c vale ", c)
+
+
+#> Continue
+c = 0
+while c < 5:
+    c += 1
+    if (c == 2):
+        print("Rompemos el bucle cuando c vale ", c)
+        continue           # ---> omitir la iteración en curso y continuar con la siguiente
+    print("c vale ", c)
+else:                            
+    print("Se ha completado toda la iteración y c vale ", c)
+
+
+#> Bucle infinito
+while (True):
+    print("El bucle se repetirá infinitamente")
+    break
+
+
+#> Recorrer Listas
+numbers = [1,2,3,4,5,6,7,8,9,10]
+indice = 0
+while indice < len(numbers):
+    print(numeros[indice])
+
+
+#> Bucle FOR
+for number in numbers:  # --> itera sobre cada elemento de la lista
+    print(number)  
+
+indice = 0
+numeros = [1,2,3,4,5,6,7,8,9,10]
+
+# modificar los valores de la lista iterando sobre los indices de cada elemento
+for numero in numeros:
+    numeros[indice] *= 10
+    indice += 1
+print(numeros)
+
+
+
+#>>> Enumerate
+# sintaxis ---> enumerate(iterable, start=0)
+# iterable: El iterable (lista, tupla, cadena, etc.) que deseas recorrer y enumerar.
+# start (opcional): Un número entero que representa el valor inicial del contador. Por defecto, comienza en 0.
+# --> (posición, elemento) <-- forma en que trabaje enumerate()
+
+
+for indice,numero in enumerate(numeros):
+    numeros[indice] *= 10
+print(numeros)  # --> [10,20,30,40,50,60,70,80,90,100]
+
