@@ -41,6 +41,9 @@ pares[3] = 6   # reasignar el valor del ítem en la lista
 #  .append() :  añadir elemento al final de la lista
 pares.append(12)  # --> [...8,10,12]
 
+# .index() : para buscar elemento y posición
+pares.index(5)  # --> retorna 2 (indice del elemento)
+
 len(pares)  # --> 6
 
 # Listas Anidadas
@@ -252,3 +255,44 @@ for i,fila in enumerate(tabla):
     for j,columna in enumerate(fila):
         print(tabla[i][j], end=" ")
     print()
+
+
+
+
+        #>>> T U P L A S    <<<#
+
+# No se pueden modificar sus elementos
+tupla = (1, "Hola", [1,2,3], -50)
+tupla[2:]  # --> ([1,2,3], -50)
+tupla[2][-1] # --> 3
+
+# .index() : para buscar elemento y posición
+tupla.index("Hola") # --> 1 (índice)
+
+# .count() : contar cuantas veces aparece un elemento
+tupla.count(-50) # --> 1 (aparece una vez)
+
+
+
+
+#  >>>    C O N J U N T O S    <<<  #
+
+# .add() : agregar elemento 
+# .remove() : eliminar elemento  --> si el elemento no está genera ERROR
+# .discard() : eliminar elemento sin generar error
+# .union() : union de conjuntos
+# .intersection() : intersección de conjuntos
+# .difference() : diferencia de conjuntos
+# .update() : añadir varios elementos en la misma liena
+
+conjunto = set() # conjunto vacío
+conjunto = {1,2,"Aloha",4,3,"Hola"}
+
+grupo = {'Hector', 'Juan', 'Mario'}
+'Hector' in grupo # --> True    (comprobar si el elemento está en el conjunto)
+
+lista = [1,2,3,3,2,1]
+
+# se quiere eliminar los elementos repetidos de la lista
+lista = list( set(lista) )
+
