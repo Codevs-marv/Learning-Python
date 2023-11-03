@@ -232,3 +232,23 @@ for indice,numero in enumerate(numeros):
     numeros[indice] *= 10
 print(numeros)  # --> [10,20,30,40,50,60,70,80,90,100]
 
+
+
+
+#> Bucles anidados
+
+tabla = [
+    [0,0,0],
+    [1,1,1],
+    [2,2,2]
+]
+
+for fila in tabla:
+    for columna in fila:
+        print(columna, end=" ")
+    print()
+
+for i,fila in enumerate(tabla):
+    for j,columna in enumerate(fila):
+        print(tabla[i][j], end=" ")
+    print()
