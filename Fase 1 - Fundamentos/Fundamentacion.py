@@ -47,6 +47,9 @@ pares.index(5)  # --> retorna 2 (indice del elemento)
 # .pop() : eliminar ultimo elemento
 pares.pop() # --> [2,4,6,8]
 
+# .sort() : ordenar lista automaticamente
+numeros.sort() # --> la ordena 
+
 len(pares)  # --> 6
 
 # Listas Anidadas
