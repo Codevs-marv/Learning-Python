@@ -35,7 +35,7 @@ print("{:>30.3}".format('palabra')) # alineamiento a la derecha en 30 caracteres
 
 
 
-#> FORMATEO DE NUMEROS
+#  >>> F O R M A T E O   D E   N U M E R O S  <<< #
 
 # organizados a 4 digitos --> ":4"
 print('{:4d}'.format(10))         #                10
