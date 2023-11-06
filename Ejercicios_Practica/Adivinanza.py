@@ -29,5 +29,5 @@ while intentos <= 4:
         if intentos == 3:
             print('Esta es tu última oportunidad')   
         else:  
-            print('Erraste! :(')
+            print('Erraste :(')
     intentos += 1
