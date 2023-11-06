@@ -24,22 +24,22 @@ while True:
     operacion = int(input())
 
     match operacion:
-        case 1:
+        case 1: # Suma
             print(f'La suma de {n1} y {n2} es: {n1+n2}')
             break
-        case 2:
+        case 2: # Resta
             print(f'La resta de {n1} y {n2} en ese orden, es: {n1-n2}')
             break
-        case 3:
+        case 3: # Multiplicacion
             print(f'El producto de {n1} y {n2} es: {n1*n2}')
             break
-        case 4:
+        case 4: # Division
             print(f'El cociente de {n1} entre {n2} es: {n1/n2}')
             break
-        case 5:
+        case 5: # Exponenciacion
             print(f'El resultado de {n1} elevado a la {n2} es: {n1**n2}')
             break
-        case 6:
+        case 6: # Mayor o menor que
             if n1 > n2:
                 print(f'{n1} es mayor que {n2}')
                 break
@@ -49,10 +49,11 @@ while True:
             else:
                 print('Los números son iguales')
                 break
-        case 7:
+        case 7: # Radicacion
             print('¿Cuál número será el índice de la raíz?')
             indice = int(input('Escribalo: '))
 
+            # si el indice de la raíz es distinto a n1 o n2 entonces..
             if indice != n1 and indice != n2:
                 print('El índice debe ser uno de los números ya ingresados')
                 break
