@@ -4,7 +4,7 @@ de cuántos intentos se necesitaron para adivinar el número.'''
 
 import random
 
-print('Este es un juego de adivinanza! Tienes 4 intentos para adivinar el número.')
+print('Este es un juego de adivinanza! Tienes 5 intentos para adivinar el número.')
 print('¡BUENA SUERTE!')
 
 # numero que se tiene que adivinar
@@ -26,5 +26,8 @@ while intentos <= 4:
         print('¡ADIVINASTE! :)')
         break
     else:
-        print('Erraste! :(')
+        if intentos == 3:
+            print('Esta es tu última oportunidad')   
+        else:  
+            print('Erraste! :(')
     intentos += 1
