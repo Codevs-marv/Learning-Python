@@ -92,3 +92,41 @@ print( f'{texto:40}')  # a la izquierda 40 caracteres
 print( f'{texto:>40}')  # a la derecha 40 caracteres
 print( f'{texto:^40}')  # al centro 40 caracteres
 
+
+
+
+
+#  >>>  F U N C I O N E S  <<< #
+
+def numero():
+    n = 2  # variable local
+
+n = 3  # variable global
+
+
+#> retorno
+def palabra():
+    return 'Esta es una cadena retornada'
+    # todo lo que esté después del return no se ejecuta
+
+
+def lista():
+    return [1,2,3,4,5]
+
+print(lista()) # ---> [1,2,3,4,5]
+print(lista()[-1]) # ---> 5
+
+
+def tupla():
+    return 'cadena', [1,2,3], 20
+
+print(tupla()) # ---> ('cadena', [1,2,3], 20) retorna una tupla
+
+#> Asignacion multiple
+a,b,c = tupla()
+    # a = 'cadena'
+    # b = [1,2,3]
+    # c = 20
+
+
+
