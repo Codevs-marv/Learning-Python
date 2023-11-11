@@ -160,3 +160,38 @@ def super_funcion(*args, **kwargs):
         print(kwarg, kwargs[kwarg])
 
 
+
+#>> RECURSIVIDAD <<#
+
+def cuenta_atras(numero):
+    numero -= 1
+    if numero > 0:
+        print(numero)
+        cuenta_atras(numero) # la funcion se llama a si misma
+    else:
+        print('¡BOOOOM!')
+
+
+def factorial(num):
+    if num > 1:
+        num = num * factorial(num - 1)
+    return num
+
+
+#>> FUNCIONES INTEGRADAS <<#
+
+bin(10) # --> 'ob1010'
+hex(10) # --> '0xa'
+
+int('0b1010', 2) # --> 10
+int('0xa', 16) # --> 10
+
+abs(-10) # --> valor absoluto
+
+round(5.5) # --> 6
+round(5.4) # --> 5
+
+eval('5 + 2') # evalúa expresiones almacenadas en cadenas
+n = 10
+eval('n*10 - 5') # --> 95
+
