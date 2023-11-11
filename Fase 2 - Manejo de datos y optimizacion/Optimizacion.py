@@ -129,4 +129,34 @@ a,b,c = tupla()
     # c = 20
 
 
+#> Argumentos Indeterminados
+
+# posicion
+def indeterminados_posicion(*args):
+    print(args)
+
+indeterminados_posicion(5,'Hola',[1,2,3,4,5]) # imprime cada argumento
+
+
+def indeterminados_posicion(*args):
+    for arg in args:
+        print(arg) # imprime uno a uno cada argumento
+
+
+# nombre
+def indeterminados_nombre(**kwargs):
+    print(kwargs)
+
+indeterminados_nombre(n=5, c='Hola', l=[1,2,3,4,5]) # imprime un diccionario
+
+
+def super_funcion(*args, **kwargs):
+    t = 0
+    for arg in args:
+        t += arg
+    print('Sumatorio indeterminado es:', t)
+
+    for kwarg in kwargs:
+        print(kwarg, kwargs[kwarg])
+
 
