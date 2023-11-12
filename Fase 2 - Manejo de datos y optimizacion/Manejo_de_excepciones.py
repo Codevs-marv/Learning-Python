@@ -35,3 +35,12 @@ except ZeroDivisionError: # excepción específica
 except Exception as e:
     print(type.__name__)  # muestra el tipo de error --> TypeError
 
+
+
+# >>> I N N O V A C I O N  <<< #
+
+def mi_funcion(valor=None):
+    if valor is None:
+        raise ValueError('Error! no se permite un valor nulo') # invoca el tipo de error -ValueError-
+
+
