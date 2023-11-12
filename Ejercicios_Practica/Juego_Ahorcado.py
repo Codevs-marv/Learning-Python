@@ -30,11 +30,11 @@ while True:
 
     else: # comienza el juego
         print("""Escoge la dificultad:
-            1. Muy fácil
-            2. Fácil
-            3. Media
-            4. Difícil
-            5. Avanzado""")
+        1. Muy fácil
+        2. Fácil
+        3. Media
+        4. Difícil
+        5. Avanzado""")
         dificultad = int(input('Ingresa el numero indicativo de dificultad: '))
 
         if (dificultad < 1) or (dificultad > 5):
@@ -45,3 +45,30 @@ while True:
     match dificultad:
         
         case 1:
+            palabra_aleatoria = random.choice(nivel_1)  # --> perro
+            adivinar = '_ ' * len(palabra_aleatoria)
+            completado = False
+
+            while completado == False:
+                print('\n¡Adivina la palabra!')
+                print()
+                print("{:>20}".format(adivinar)) 
+                indices = " ".join(str(i) for i in range(len(palabra_aleatoria)))  #  índices debajo de la palabra
+                print('{:>19}'.format(indices))
+                print('Inserta una letra (la que creas que va)')
+                letra = input()
+                letra.lower()
+                
+                if not isinstance(letra, str):
+                    print('El caracter ingresado no es una letra, inténtalo de nuevo!')
+                    continue
+                else:
+                    print('Ingrese un índice (posicion donde quiere poner la letra)')
+                    posicion = int(input())
+                    palabra = list(palabra_aleatoria)
+                    adivinar_lista = list(adivinar)
+                    
+                    if letra == palabra[posicion]: # comprobar si la letra ingresada coindice con la posición escogida
+                        adivinar_lista[posicion] = letra
+                        adivinar = "".join(adivinar_lista)
+
