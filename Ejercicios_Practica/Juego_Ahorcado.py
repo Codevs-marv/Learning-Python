@@ -73,7 +73,7 @@ while True:
                     if letra == palabra[posicion]:  # comprobar si la letra ingresada coindice con la posición escogida
                         adivinar_lista[posicion] = letra
                         adivinar = " ".join(adivinar_lista)
-                        completado = adivinar.replace(" ", "") == palabra_aleatoria  # verificar si la palabra ha sido adivinada
+                        completado = adivinar == palabra_aleatoria  # verificar si la palabra ha sido adivinada
                     else:
                         print('La letra no coincide con la posición :(')
                         intentos += 1
