@@ -15,7 +15,7 @@ opcion = int(input()) # unidad de medida a trabajar
 
 match opcion:
 
-    # Longitud
+    #> LONGITUD
     case 1:
         print('Ingrese una cantidad: ')
         valor = float(input()) # --> valor a convertir
@@ -46,13 +46,13 @@ match opcion:
          """)
         convertir_a = int(input())
         
-        match convertir_a:
+        if 1 <= und_inicial <= 7 and 1 <= convertir_a <= 7:
+            match convertir_a:
+                
+                # convertir a milimetros
+                case 1:
+                    result = 0
 
-            # convertir a milimetros
-            case 1:
-                result = 0
-
-                if 1 <= und_inicial <= 7 and 1 <= convertir_a <= 7: # comprobar opción
                     if und_inicial == 1:
                         result = valor
                         print(result)
@@ -70,17 +70,15 @@ match opcion:
                         print(result)
                     elif (und_inicial == 6):
                         result = valor * 1000000
+                        print(result)
                     else:
                         result = valor * 1609344
                         print(result)
-                else:
-                    print('La opción ingresada no es válida')
-            
-            # convertir a centimetros
-            case 2:
-                result = 0
+                
+                # convertir a centimetros
+                case 2:
+                    result = 0
 
-                if 1 <= und_inicial <= 7 and 1 <= convertir_a <= 7: # comprobar opción
                     if und_inicial == 2:
                         result = valor
                         print(result)
@@ -98,17 +96,15 @@ match opcion:
                         print(result)
                     elif (und_inicial == 6):
                         result = valor * 100000
+                        print(result)
                     else:
                         result = valor * 160934.4
                         print(result)
-                else:
-                    print('La opción ingresada no es válida')
-            
-            # convertir a pulgadas
-            case 3:
-                result = 0
+                
+                # convertir a pulgadas
+                case 3:
+                    result = 0
 
-                if 1 <= und_inicial <= 7 and 1 <= convertir_a <= 7: # comprobar opción
                     if und_inicial == 3:
                         result = valor
                         print(result)
@@ -126,17 +122,15 @@ match opcion:
                         print(result)
                     elif (und_inicial == 6):
                         result = valor * 1000 * 39.37
+                        print(result)
                     else:
                         result = valor * 1609.344 * 39.37
                         print(result)
-                else:
-                    print('La opción ingresada no es válida')
-            
-            # convertir a pies
-            case 4:
-                result = 0
+                
+                # convertir a pies
+                case 4:
+                    result = 0
 
-                if 1 <= und_inicial <= 7 and 1 <= convertir_a <= 7: # comprobar opción
                     if und_inicial == 4:
                         result = valor
                         print(result)
@@ -154,36 +148,95 @@ match opcion:
                         print(result)
                     elif (und_inicial == 6):
                         result = valor * 3280.84
+                        print(result)
                     else:
                         result = valor * 5280
                         print(result)
-                else:
-                    print('La opción ingresada no es válida')
 
-            # convertir a metros
-            case 5:
-                result = 0
 
-                if 1 <= und_inicial <= 7 and 1 <= convertir_a <= 7: # comprobar opción
+                # convertir a metros
+                case 5:
+                    result = 0
+
                     if und_inicial == 5:
                         result = valor
                         print(result)
                     elif (und_inicial == 1):
-                        result = (valor / 1000) * 0.3048
+                        result = valor / 1000
                         print(result)
                     elif (und_inicial == 2):
-                        result = valor / 30.48
+                        result = valor / 100
                         print(result)
                     elif (und_inicial == 3):
-                        result = valor / 12
+                        result = valor * 0.0254
                         print(result)
                     elif (und_inicial == 4):
                         result = valor * 0.3048
                         print(result)
                     elif (und_inicial == 6):
-                        result = valor * 3280.84
-                    else:
-                        result = valor * 5280
+                        result = valor * 1000
                         print(result)
-                else:
-                    print('La opción ingresada no es válida')
+                    else:
+                        result = valor * 1609.34
+                        print(result)
+
+                # convertir a km
+                case 6:
+                    result = 0
+
+                    if und_inicial == 6:
+                        result = valor
+                        print(result)
+                    elif (und_inicial == 1):
+                        result = valor / 1000000
+                        print(result)
+                    elif (und_inicial == 2):
+                        result = valor / 100000
+                        print(result)
+                    elif (und_inicial == 3):
+                        result = (valor * 0.0254) * 0.001
+                        print(result)
+                    elif (und_inicial == 4):
+                        result = (valor * 0.3048) * 0.001
+                        print(result)
+                    elif (und_inicial == 5):
+                        result = valor / 1000
+                        print(result)
+                    else:
+                        result = valor * 1.60934
+                        print(result)
+        else:
+            print('ERROR > Opción ingresada no válida')
+
+
+    #> TEMPERATURA
+    case 2:
+        print('Ingrese una cantidad: ')
+        valor = float(input()) # --> valor a convertir
+
+         # Unidad de medida inicial
+        print('¿En qué unidad de temperatura está el valor ingresado?')
+        print("""
+            [1] Grados Celsius (°C)
+            [2] Grados Fahrenheith (°F)
+            [3] Grados Kelvin (K)
+         """)
+        und_inicial = int(input())
+
+        # Unidad de medida que se desea otener
+        print('¿A qué unidades quiere convertirlo?')
+        print("""
+            [1] Grados Celsius (°C)
+            [2] Grados Fahrenheith (°F)
+            [3] Grados Kelvin (K)
+         """)
+        convertir_a = int(input())
+
+        if 1 <= und_inicial <= 7 and 1 <= convertir_a <= 7:
+            match convertir_a:
+                
+                # convertir a °C
+                case 1:
+                    pass
+        else:
+            print('ERROR > Opción ingresada no válida')
