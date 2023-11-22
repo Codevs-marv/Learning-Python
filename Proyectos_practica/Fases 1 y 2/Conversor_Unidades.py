@@ -8,8 +8,7 @@ print('¿Con qué unidades de medida quiere trabajar?')
 print("""
     [1] Longitud
     [2] Temperatura
-    [3] Masa
-    [4] Tiempo
+    [3] Tiempo
 """)
 opcion = int(input()) # unidad de medida a trabajar
 
@@ -205,6 +204,10 @@ match opcion:
                     else:
                         result = valor * 1.60934
                         print(result)
+
+                # convertir a millas
+                case 7:
+                    print('Por el momento no está disponible esta opción')
         else:
             print('ERROR > Opción ingresada no válida')
 
@@ -246,7 +249,7 @@ match opcion:
                     else:
                         resultado = valor - 273.15
                                         
-                    print(resultado)
+                    print('El resultado es: ', resultado)
 
                 # convertir a °F
                 case 2:
@@ -259,7 +262,7 @@ match opcion:
                     else:
                         resulta = (valor - 273.15) * (9/5) + 32
 
-                    print(resulta)
+                    print('El resultado es: ', resulta)
 
                 # convertir a K
                 case 3:
@@ -271,5 +274,98 @@ match opcion:
                         res = valor + 273.15
                     else:
                         res = (valor - 32) * (5/9) * 273.15
+
+                    print('El resultado es: ', res)
         else:
             print('ERROR > Opción ingresada no válida')
+
+
+    #> TIEMPO
+    case 3:
+        print('Ingrese una cantidad: ')
+        valor = float(input()) # --> valor a convertir
+
+         # Unidad de medida inicial
+        print('¿En qué unidad del tiempo está el valor ingresado?')
+        print("""
+            [1] Segundos (seg)
+            [2] Minutos (min)
+            [3] Horas (h)
+            [4] Dias 
+         """)
+        und_inicial = int(input())
+
+        # Unidad de medida que se desea otener
+        print('¿A qué unidades quiere convertirlo?')
+        print("""
+            [1] Segundos (seg)
+            [2] Minutos (min)
+            [3] Horas (h)
+            [4] Dias
+         """)
+        convertir_a = int(input())
+     
+        if 1 <= und_inicial <= 7 and 1 <= convertir_a <= 7:
+                
+            match convertir_a:
+             
+                # convertir a segundos
+                case 1:
+                    resul = 0
+
+                    if und_inicial == 1:
+                        resul = valor
+                    elif und_inicial == 2:
+                        resul = valor * 60
+                    elif und_inicial == 3:
+                        resul = valor * 3600
+                    else:
+                        resul = valor * 86400
+
+                    print('El resultado es: ', resul)
+
+                # convertir a minutos
+                case 2:
+                    resul = 0
+
+                    if und_inicial == 2:
+                        resul = valor
+                    elif und_inicial == 1:
+                        result = valor * (1/60)
+                    elif und_inicial == 3:
+                        resul = valor * 60
+                    else:
+                        resul = valor * 1440
+
+                    print('El resultado es: ', resul)
+
+                # convertir a horas
+                case 2:
+                    resul = 0
+
+                    if und_inicial == 3:
+                        resul = valor
+                    elif und_inicial == 1:
+                        result = valor / 3600
+                    elif und_inicial == 2:
+                        resul = valor / 60
+                    else:
+                        resul = valor * 24
+
+                    print('El resultado es: ', resul)
+
+                # convertir a dias
+                case 3:
+                    resul = 0
+
+                    if und_inicial == 4:
+                        resul = valor
+                    elif und_inicial == 1:
+                        result = valor / 86400
+                    elif und_inicial == 2:
+                        resul = valor / 1440
+                    else:
+                        resul = valor / 24
+
+                    print('El resultado es: ', resul)
+                    
