@@ -54,25 +54,20 @@ match opcion:
 
                     if und_inicial == 1:
                         result = valor
-                        print(result)
                     elif (und_inicial == 2):
                         result = valor * 10
-                        print(result)
                     elif (und_inicial == 3):
                         result = valor * 25.4
-                        print(result)
                     elif (und_inicial == 4):
                         result = valor * 304.8
-                        print(result)
                     elif (und_inicial == 5):
                         result = valor * 1000
-                        print(result)
                     elif (und_inicial == 6):
                         result = valor * 1000000
-                        print(result)
                     else:
                         result = valor * 1609344
-                        print(result)
+                    
+                    print(f'El resultado es: {result}mm')
                 
                 # convertir a centimetros
                 case 2:
@@ -80,25 +75,20 @@ match opcion:
 
                     if und_inicial == 2:
                         result = valor
-                        print(result)
                     elif (und_inicial == 1):
                         result = valor / 10
-                        print(result)
                     elif (und_inicial == 3):
                         result = valor * 25.4
-                        print(result)
                     elif (und_inicial == 4):
                         result = valor * 30.48
-                        print(result)
                     elif (und_inicial == 5):
                         result = valor * 100
-                        print(result)
                     elif (und_inicial == 6):
                         result = valor * 100000
-                        print(result)
                     else:
                         result = valor * 160934.4
-                        print(result)
+                    
+                    print(f'El resultado es: {result}cm')
                 
                 # convertir a pulgadas
                 case 3:
@@ -106,25 +96,20 @@ match opcion:
 
                     if und_inicial == 3:
                         result = valor
-                        print(result)
                     elif (und_inicial == 1):
                         result = valor / 25.4
-                        print(result)
                     elif (und_inicial == 2):
                         result = valor * 2.54
-                        print(result)
                     elif (und_inicial == 4):
                         result = valor * 12
-                        print(result)
                     elif (und_inicial == 5):
                         result = valor * 39.37
-                        print(result)
                     elif (und_inicial == 6):
                         result = valor * 1000 * 39.37
-                        print(result)
                     else:
                         result = valor * 1609.344 * 39.37
-                        print(result)
+                    
+                    print(f'El resultado es: {result}pulg')
                 
                 # convertir a pies
                 case 4:
@@ -132,25 +117,20 @@ match opcion:
 
                     if und_inicial == 4:
                         result = valor
-                        print(result)
                     elif (und_inicial == 1):
                         result = (valor / 1000) * 0.3048
-                        print(result)
                     elif (und_inicial == 2):
                         result = valor / 30.48
-                        print(result)
                     elif (und_inicial == 3):
                         result = valor / 12
-                        print(result)
                     elif (und_inicial == 5):
                         result = valor * 0.3048
-                        print(result)
                     elif (und_inicial == 6):
                         result = valor * 3280.84
-                        print(result)
                     else:
                         result = valor * 5280
-                        print(result)
+                    
+                    print(f'El resultado es: {result}ft')
 
 
                 # convertir a metros
@@ -159,25 +139,20 @@ match opcion:
 
                     if und_inicial == 5:
                         result = valor
-                        print(result)
                     elif (und_inicial == 1):
                         result = valor / 1000
-                        print(result)
                     elif (und_inicial == 2):
                         result = valor / 100
-                        print(result)
                     elif (und_inicial == 3):
                         result = valor * 0.0254
-                        print(result)
                     elif (und_inicial == 4):
                         result = valor * 0.3048
-                        print(result)
                     elif (und_inicial == 6):
                         result = valor * 1000
-                        print(result)
                     else:
                         result = valor * 1609.34
-                        print(result)
+                    
+                    print(f'El resultado es: {result}m')
 
                 # convertir a km
                 case 6:
@@ -185,25 +160,20 @@ match opcion:
 
                     if und_inicial == 6:
                         result = valor
-                        print(result)
                     elif (und_inicial == 1):
                         result = valor / 1000000
-                        print(result)
                     elif (und_inicial == 2):
                         result = valor / 100000
-                        print(result)
                     elif (und_inicial == 3):
                         result = (valor * 0.0254) * 0.001
-                        print(result)
                     elif (und_inicial == 4):
                         result = (valor * 0.3048) * 0.001
-                        print(result)
                     elif (und_inicial == 5):
                         result = valor / 1000
-                        print(result)
                     else:
                         result = valor * 1.60934
-                        print(result)
+                    
+                    print(f'El resultado es: {result}km')
 
                 # convertir a millas
                 case 7:
@@ -249,7 +219,7 @@ match opcion:
                     else:
                         resultado = valor - 273.15
                                         
-                    print('El resultado es: ', resultado)
+                    print('El resultado es: ', f'{resultado}°')
 
                 # convertir a °F
                 case 2:
@@ -262,7 +232,7 @@ match opcion:
                     else:
                         resulta = (valor - 273.15) * (9/5) + 32
 
-                    print('El resultado es: ', resulta)
+                    print('El resultado es: ', f'{resulta}°')
 
                 # convertir a K
                 case 3:
@@ -275,7 +245,7 @@ match opcion:
                     else:
                         res = (valor - 32) * (5/9) * 273.15
 
-                    print('El resultado es: ', res)
+                    print('El resultado es: ', f'{res}°')
         else:
             print('ERROR > Opción ingresada no válida')
 
