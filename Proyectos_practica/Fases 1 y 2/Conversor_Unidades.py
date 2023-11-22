@@ -235,8 +235,41 @@ match opcion:
         if 1 <= und_inicial <= 7 and 1 <= convertir_a <= 7:
             match convertir_a:
                 
-                # convertir a °C
+               # convertir a °C
                 case 1:
-                    pass
+                    resultado = 0
+
+                    if und_inicial == 1:
+                        resultado = valor
+                    elif und_inicial == 2:
+                        resultado = (valor - 32) * (5/9)
+                    else:
+                        resultado = valor - 273.15
+                                        
+                    print(resultado)
+
+                # convertir a °F
+                case 2:
+                    resulta = 0
+
+                    if und_inicial == 2:
+                        resulta = valor
+                    elif und_inicial == 1:
+                        resulta =  (valor * (9/5)) + 32
+                    else:
+                        resulta = (valor - 273.15) * (9/5) + 32
+
+                    print(resulta)
+
+                # convertir a K
+                case 3:
+                    res = 0
+
+                    if und_inicial == 3:
+                        res = valor
+                    elif und_inicial == 1:
+                        res = valor + 273.15
+                    else:
+                        res = (valor - 32) * (5/9) * 273.15
         else:
             print('ERROR > Opción ingresada no válida')
