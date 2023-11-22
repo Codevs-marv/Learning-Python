@@ -4,338 +4,399 @@
 
 print('CONVERSOR DE UNIDADES')
 print()
-print('¿Con qué unidades de medida quiere trabajar?')
-print("""
-    [1] Longitud
-    [2] Temperatura
-    [3] Tiempo
-""")
-opcion = int(input()) # unidad de medida a trabajar
 
-match opcion:
+while True:
+    print('¿Con qué unidades de medida quiere trabajar?')
+    print("""
+        [1] Longitud
+        [2] Temperatura
+        [3] Tiempo
+    """)
+    try:
+        opcion = int(input()) # unidad de medida a trabajar
+    except ValueError:
+        print('Por favor, ingrese un número válido')
+        continue
 
-    #> LONGITUD
-    case 1:
-        print('Ingrese una cantidad: ')
-        valor = float(input()) # --> valor a convertir
+    match opcion:
 
-        # Unidad de medida inicial
-        print('¿En qué unidades se encuentra el número ingresado?')
-        print("""
-            [1] Milimetros
-            [2] Centimetros
-            [3] Pulgadas (pulg)
-            [4] Pies (ft)
-            [5] Metros
-            [6] Kilómetros
-            [7] Millas
-         """)
-        und_inicial = int(input())
+        #> LONGITUD
+        case 1:
+            print('Ingrese una cantidad: ')
+            try:
+                valor = float(input()) # --> valor a convertir
+            except ValueError:
+                print('Por favor, ingrese un número válido')
+                continue
 
-        # Unidad de medida que se desea otener
-        print('¿A qué unidades quiere convertirlo?')
-        print("""
-            [1] Milimetros
-            [2] Centimetros
-            [3] Pulgadas (pulg)
-            [4] Pies (ft)
-            [5] Metros
-            [6] Kilómetros
-            [7] Millas
-         """)
-        convertir_a = int(input())
+            # Unidad de medida inicial
+            print('¿En qué unidades se encuentra el número ingresado?')
+            print("""
+                [1] Milimetros
+                [2] Centimetros
+                [3] Pulgadas (pulg)
+                [4] Pies (ft)
+                [5] Metros
+                [6] Kilómetros
+                [7] Millas
+            """)
+            try:
+                und_inicial = int(input())
+            except ValueError:
+                print('Por favor, ingrese un número válido')
+                continue
+
+            # Unidad de medida que se desea otener
+            print('¿A qué unidades quiere convertirlo?')
+            print("""
+                [1] Milimetros
+                [2] Centimetros
+                [3] Pulgadas (pulg)
+                [4] Pies (ft)
+                [5] Metros
+                [6] Kilómetros
+                [7] Millas
+            """)
+            try:
+                convertir_a = int(input())
+            except ValueError:
+                print('Por favor, ingrese un número válido')
+                continue
+            
+            if 1 <= und_inicial <= 7 and 1 <= convertir_a <= 7:
+                match convertir_a:
+                    
+                    # convertir a milimetros
+                    case 1:
+                        result = 0
+
+                        if und_inicial == 1:
+                            result = valor
+                        elif (und_inicial == 2):
+                            result = valor * 10
+                        elif (und_inicial == 3):
+                            result = valor * 25.4
+                        elif (und_inicial == 4):
+                            result = valor * 304.8
+                        elif (und_inicial == 5):
+                            result = valor * 1000
+                        elif (und_inicial == 6):
+                            result = valor * 1000000
+                        else:
+                            result = valor * 1609344
+                        
+                        print(f'El resultado es: {result}mm')
+                        break
+                    
+                    # convertir a centimetros
+                    case 2:
+                        result = 0
+
+                        if und_inicial == 2:
+                            result = valor
+                        elif (und_inicial == 1):
+                            result = valor / 10
+                        elif (und_inicial == 3):
+                            result = valor * 25.4
+                        elif (und_inicial == 4):
+                            result = valor * 30.48
+                        elif (und_inicial == 5):
+                            result = valor * 100
+                        elif (und_inicial == 6):
+                            result = valor * 100000
+                        else:
+                            result = valor * 160934.4
+                        
+                        print(f'El resultado es: {result}cm')
+                        break
+                    
+                    # convertir a pulgadas
+                    case 3:
+                        result = 0
+
+                        if und_inicial == 3:
+                            result = valor
+                        elif (und_inicial == 1):
+                            result = valor / 25.4
+                        elif (und_inicial == 2):
+                            result = valor * 2.54
+                        elif (und_inicial == 4):
+                            result = valor * 12
+                        elif (und_inicial == 5):
+                            result = valor * 39.37
+                        elif (und_inicial == 6):
+                            result = valor * 1000 * 39.37
+                        else:
+                            result = valor * 1609.344 * 39.37
+                        
+                        print(f'El resultado es: {result}pulg')
+                        break
+                    
+                    # convertir a pies
+                    case 4:
+                        result = 0
+
+                        if und_inicial == 4:
+                            result = valor
+                        elif (und_inicial == 1):
+                            result = (valor / 1000) * 0.3048
+                        elif (und_inicial == 2):
+                            result = valor / 30.48
+                        elif (und_inicial == 3):
+                            result = valor / 12
+                        elif (und_inicial == 5):
+                            result = valor * 0.3048
+                        elif (und_inicial == 6):
+                            result = valor * 3280.84
+                        else:
+                            result = valor * 5280
+                        
+                        print(f'El resultado es: {result}ft')
+                        break
+
+
+                    # convertir a metros
+                    case 5:
+                        result = 0
+
+                        if und_inicial == 5:
+                            result = valor
+                        elif (und_inicial == 1):
+                            result = valor / 1000
+                        elif (und_inicial == 2):
+                            result = valor / 100
+                        elif (und_inicial == 3):
+                            result = valor * 0.0254
+                        elif (und_inicial == 4):
+                            result = valor * 0.3048
+                        elif (und_inicial == 6):
+                            result = valor * 1000
+                        else:
+                            result = valor * 1609.34
+                        
+                        print(f'El resultado es: {result}m')
+                        break
+
+                    # convertir a km
+                    case 6:
+                        result = 0
+
+                        if und_inicial == 6:
+                            result = valor
+                        elif (und_inicial == 1):
+                            result = valor / 1000000
+                        elif (und_inicial == 2):
+                            result = valor / 100000
+                        elif (und_inicial == 3):
+                            result = (valor * 0.0254) * 0.001
+                        elif (und_inicial == 4):
+                            result = (valor * 0.3048) * 0.001
+                        elif (und_inicial == 5):
+                            result = valor / 1000
+                        else:
+                            result = valor * 1.60934
+                        
+                        print(f'El resultado es: {result}km')
+                        break
+
+                    # convertir a millas
+                    case 7:
+                        print('Por el momento no está disponible esta opción')
+                        break
+            else:
+                print('ERROR > Opción ingresada no válida')
+                break
+
+
+        #> TEMPERATURA
+        case 2:
+            print('Ingrese una cantidad: ')
+            try:
+                valor = float(input()) # --> valor a convertir
+            except ValueError:
+                print('Por favor, ingrese un número válido')
+                continue
+
+            # Unidad de medida inicial
+            print('¿En qué unidad de temperatura está el valor ingresado?')
+            print("""
+                [1] Grados Celsius (°C)
+                [2] Grados Fahrenheith (°F)
+                [3] Grados Kelvin (K)
+            """)
+            try:
+                und_inicial = int(input())
+            except ValueError:
+                print('Por favor, ingrese un número válido')
+                continue
+
+            # Unidad de medida que se desea otener
+            print('¿A qué unidades quiere convertirlo?')
+            print("""
+                [1] Grados Celsius (°C)
+                [2] Grados Fahrenheith (°F)
+                [3] Grados Kelvin (K)
+            """)
+            try:
+                convertir_a = int(input())
+            except ValueError:
+                print('Por favor, ingrese un número válido')
+                continue
+
+            if 1 <= und_inicial <= 7 and 1 <= convertir_a <= 3:
+                match convertir_a:
+                    
+                # convertir a °C
+                    case 1:
+                        resultado = 0
+
+                        if und_inicial == 1:
+                            resultado = valor
+                        elif und_inicial == 2:
+                            resultado = (valor - 32) * (5/9)
+                        else:
+                            resultado = valor - 273.15
+                                            
+                        print('El resultado es: ', f'{resultado}°C')
+                        break
+
+                    # convertir a °F
+                    case 2:
+                        resulta = 0
+
+                        if und_inicial == 2:
+                            resulta = valor
+                        elif und_inicial == 1:
+                            resulta =  (valor * (9/5)) + 32
+                        else:
+                            resulta = (valor - 273.15) * (9/5) + 32
+
+                        print('El resultado es: ', f'{resulta}°F')
+                        break
+
+                    # convertir a K
+                    case 3:
+                        res = 0
+
+                        if und_inicial == 3:
+                            res = valor
+                        elif und_inicial == 1:
+                            res = valor + 273.15
+                        else:
+                            res = (valor - 32) * (5/9) * 273.15
+
+                        print('El resultado es: ', f'{res}°K')
+                        break
+            else:
+                print('ERROR > Opción ingresada no válida')
+                break
+
+
+        #> TIEMPO
+        case 3:
+            print('Ingrese una cantidad: ')
+            try:
+                valor = float(input()) # --> valor a convertir
+            except ValueError:
+                print('Por favor, ingrese un número válido')
+                continue
+
+            # Unidad de medida inicial
+            print('¿En qué unidad del tiempo está el valor ingresado?')
+            print("""
+                [1] Segundos (seg)
+                [2] Minutos (min)
+                [3] Horas (h)
+                [4] Dias 
+            """)
+            try:
+                und_inicial = int(input())
+            except ValueError:
+                print('Por favor, ingrese un número válido')
+                continue
+
+            # Unidad de medida que se desea otener
+            print('¿A qué unidades quiere convertirlo?')
+            print("""
+                [1] Segundos (seg)
+                [2] Minutos (min)
+                [3] Horas (h)
+                [4] Dias
+            """)
+            try:
+                convertir_a = int(input())
+            except ValueError:
+                print('Por favor, ingrese un número válido')
+                continue
         
-        if 1 <= und_inicial <= 7 and 1 <= convertir_a <= 7:
-            match convertir_a:
-                
-                # convertir a milimetros
-                case 1:
-                    result = 0
-
-                    if und_inicial == 1:
-                        result = valor
-                    elif (und_inicial == 2):
-                        result = valor * 10
-                    elif (und_inicial == 3):
-                        result = valor * 25.4
-                    elif (und_inicial == 4):
-                        result = valor * 304.8
-                    elif (und_inicial == 5):
-                        result = valor * 1000
-                    elif (und_inicial == 6):
-                        result = valor * 1000000
-                    else:
-                        result = valor * 1609344
+            if 1 <= und_inicial <= 7 and 1 <= convertir_a <= 4:
                     
-                    print(f'El resultado es: {result}mm')
+                match convertir_a:
                 
-                # convertir a centimetros
-                case 2:
-                    result = 0
+                    # convertir a segundos
+                    case 1:
+                        resul = 0
 
-                    if und_inicial == 2:
-                        result = valor
-                    elif (und_inicial == 1):
-                        result = valor / 10
-                    elif (und_inicial == 3):
-                        result = valor * 25.4
-                    elif (und_inicial == 4):
-                        result = valor * 30.48
-                    elif (und_inicial == 5):
-                        result = valor * 100
-                    elif (und_inicial == 6):
-                        result = valor * 100000
-                    else:
-                        result = valor * 160934.4
-                    
-                    print(f'El resultado es: {result}cm')
-                
-                # convertir a pulgadas
-                case 3:
-                    result = 0
+                        if und_inicial == 1:
+                            resul = valor
+                        elif und_inicial == 2:
+                            resul = valor * 60
+                        elif und_inicial == 3:
+                            resul = valor * 3600
+                        else:
+                            resul = valor * 86400
 
-                    if und_inicial == 3:
-                        result = valor
-                    elif (und_inicial == 1):
-                        result = valor / 25.4
-                    elif (und_inicial == 2):
-                        result = valor * 2.54
-                    elif (und_inicial == 4):
-                        result = valor * 12
-                    elif (und_inicial == 5):
-                        result = valor * 39.37
-                    elif (und_inicial == 6):
-                        result = valor * 1000 * 39.37
-                    else:
-                        result = valor * 1609.344 * 39.37
-                    
-                    print(f'El resultado es: {result}pulg')
-                
-                # convertir a pies
-                case 4:
-                    result = 0
+                        print(f'El resultado es: {resul}seg')
+                        break
 
-                    if und_inicial == 4:
-                        result = valor
-                    elif (und_inicial == 1):
-                        result = (valor / 1000) * 0.3048
-                    elif (und_inicial == 2):
-                        result = valor / 30.48
-                    elif (und_inicial == 3):
-                        result = valor / 12
-                    elif (und_inicial == 5):
-                        result = valor * 0.3048
-                    elif (und_inicial == 6):
-                        result = valor * 3280.84
-                    else:
-                        result = valor * 5280
-                    
-                    print(f'El resultado es: {result}ft')
+                    # convertir a minutos
+                    case 2:
+                        resul = 0
 
+                        if und_inicial == 2:
+                            resul = valor
+                        elif und_inicial == 1:
+                            result = valor / 60
+                        elif und_inicial == 3:
+                            resul = valor * 60
+                        else:
+                            resul = valor * 1440
 
-                # convertir a metros
-                case 5:
-                    result = 0
+                        print(f'El resultado es: {resul}min')
+                        break
 
-                    if und_inicial == 5:
-                        result = valor
-                    elif (und_inicial == 1):
-                        result = valor / 1000
-                    elif (und_inicial == 2):
-                        result = valor / 100
-                    elif (und_inicial == 3):
-                        result = valor * 0.0254
-                    elif (und_inicial == 4):
-                        result = valor * 0.3048
-                    elif (und_inicial == 6):
-                        result = valor * 1000
-                    else:
-                        result = valor * 1609.34
-                    
-                    print(f'El resultado es: {result}m')
+                    # convertir a horas
+                    case 2:
+                        resul = 0
 
-                # convertir a km
-                case 6:
-                    result = 0
+                        if und_inicial == 3:
+                            resul = valor
+                        elif und_inicial == 1:
+                            result = valor / 3600
+                        elif und_inicial == 2:
+                            resul = valor / 60
+                        else:
+                            resul = valor * 24
 
-                    if und_inicial == 6:
-                        result = valor
-                    elif (und_inicial == 1):
-                        result = valor / 1000000
-                    elif (und_inicial == 2):
-                        result = valor / 100000
-                    elif (und_inicial == 3):
-                        result = (valor * 0.0254) * 0.001
-                    elif (und_inicial == 4):
-                        result = (valor * 0.3048) * 0.001
-                    elif (und_inicial == 5):
-                        result = valor / 1000
-                    else:
-                        result = valor * 1.60934
-                    
-                    print(f'El resultado es: {result}km')
+                        print(f'El resultado es: {resul}h')
+                        break
 
-                # convertir a millas
-                case 7:
-                    print('Por el momento no está disponible esta opción')
-        else:
-            print('ERROR > Opción ingresada no válida')
+                    # convertir a dias
+                    case 3:
+                        resul = 0
 
+                        if und_inicial == 4:
+                            resul = valor
+                        elif und_inicial == 1:
+                            result = valor / 86400
+                        elif und_inicial == 2:
+                            resul = valor / 1440
+                        else:
+                            resul = valor / 24
 
-    #> TEMPERATURA
-    case 2:
-        print('Ingrese una cantidad: ')
-        valor = float(input()) # --> valor a convertir
-
-         # Unidad de medida inicial
-        print('¿En qué unidad de temperatura está el valor ingresado?')
-        print("""
-            [1] Grados Celsius (°C)
-            [2] Grados Fahrenheith (°F)
-            [3] Grados Kelvin (K)
-         """)
-        und_inicial = int(input())
-
-        # Unidad de medida que se desea otener
-        print('¿A qué unidades quiere convertirlo?')
-        print("""
-            [1] Grados Celsius (°C)
-            [2] Grados Fahrenheith (°F)
-            [3] Grados Kelvin (K)
-         """)
-        convertir_a = int(input())
-
-        if 1 <= und_inicial <= 7 and 1 <= convertir_a <= 7:
-            match convertir_a:
-                
-               # convertir a °C
-                case 1:
-                    resultado = 0
-
-                    if und_inicial == 1:
-                        resultado = valor
-                    elif und_inicial == 2:
-                        resultado = (valor - 32) * (5/9)
-                    else:
-                        resultado = valor - 273.15
-                                        
-                    print('El resultado es: ', f'{resultado}°')
-
-                # convertir a °F
-                case 2:
-                    resulta = 0
-
-                    if und_inicial == 2:
-                        resulta = valor
-                    elif und_inicial == 1:
-                        resulta =  (valor * (9/5)) + 32
-                    else:
-                        resulta = (valor - 273.15) * (9/5) + 32
-
-                    print('El resultado es: ', f'{resulta}°')
-
-                # convertir a K
-                case 3:
-                    res = 0
-
-                    if und_inicial == 3:
-                        res = valor
-                    elif und_inicial == 1:
-                        res = valor + 273.15
-                    else:
-                        res = (valor - 32) * (5/9) * 273.15
-
-                    print('El resultado es: ', f'{res}°')
-        else:
-            print('ERROR > Opción ingresada no válida')
-
-
-    #> TIEMPO
-    case 3:
-        print('Ingrese una cantidad: ')
-        valor = float(input()) # --> valor a convertir
-
-         # Unidad de medida inicial
-        print('¿En qué unidad del tiempo está el valor ingresado?')
-        print("""
-            [1] Segundos (seg)
-            [2] Minutos (min)
-            [3] Horas (h)
-            [4] Dias 
-         """)
-        und_inicial = int(input())
-
-        # Unidad de medida que se desea otener
-        print('¿A qué unidades quiere convertirlo?')
-        print("""
-            [1] Segundos (seg)
-            [2] Minutos (min)
-            [3] Horas (h)
-            [4] Dias
-         """)
-        convertir_a = int(input())
-     
-        if 1 <= und_inicial <= 7 and 1 <= convertir_a <= 7:
-                
-            match convertir_a:
-             
-                # convertir a segundos
-                case 1:
-                    resul = 0
-
-                    if und_inicial == 1:
-                        resul = valor
-                    elif und_inicial == 2:
-                        resul = valor * 60
-                    elif und_inicial == 3:
-                        resul = valor * 3600
-                    else:
-                        resul = valor * 86400
-
-                    print('El resultado es: ', resul)
-
-                # convertir a minutos
-                case 2:
-                    resul = 0
-
-                    if und_inicial == 2:
-                        resul = valor
-                    elif und_inicial == 1:
-                        result = valor * (1/60)
-                    elif und_inicial == 3:
-                        resul = valor * 60
-                    else:
-                        resul = valor * 1440
-
-                    print('El resultado es: ', resul)
-
-                # convertir a horas
-                case 2:
-                    resul = 0
-
-                    if und_inicial == 3:
-                        resul = valor
-                    elif und_inicial == 1:
-                        result = valor / 3600
-                    elif und_inicial == 2:
-                        resul = valor / 60
-                    else:
-                        resul = valor * 24
-
-                    print('El resultado es: ', resul)
-
-                # convertir a dias
-                case 3:
-                    resul = 0
-
-                    if und_inicial == 4:
-                        resul = valor
-                    elif und_inicial == 1:
-                        result = valor / 86400
-                    elif und_inicial == 2:
-                        resul = valor / 1440
-                    else:
-                        resul = valor / 24
-
-                    print('El resultado es: ', resul)
+                        print(f'El resultado es: {result} días')
+                        break
+            else:
+                print('ERROR > La opción ingresada no es válida')
+                break
                     
