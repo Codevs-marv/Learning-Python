@@ -69,24 +69,30 @@ while True:
             continue
 
         # Depósitos
+        # Suponiendo que este código está dentro de un contexto adecuado, como una función o un bucle
+# y que cuentas es una lista de diccionarios que contiene información sobre las cuentas.
+
         case 2:
+
             print('Ingrese el número de cuenta al que quiere depositar: ')
             cuenta = int(input())
 
             existe = False
-            for dict in cuentas:
-                if new_count['Cuenta'] == cuenta:
+            for cuenta_info in cuentas:
+                if cuenta_info['Cuenta'] == cuenta:
                     existe = True
 
             depositado = False
-            while not depositado:    
-                if existe:
-                    try:
-                        valor = int(input('Ingrese la cantidad que quiere depositar: '))
-                        depositado = True
-                    except ValueError:
-                        print('ERROR: Debes ingresar una cantidad válida')
-                        continue
-                    
-                    print('Procesando depósito...\nDepósito realizado con éxito!')
-                    print(f'Se depositó en la cuenta {cuenta} la cantidad de {valor}')
+            if existe:
+                try:
+                    valor = int(input('Ingrese la cantidad que quiere depositar: '))
+                    depositado = True
+                except ValueError:
+                    print('ERROR: Debes ingresar una cantidad válida')
+
+                if depositado:
+                    print('Procesando depósito...')
+                    print(f'Depósito realizado con éxito en la cuenta {cuenta}. Se depositó la cantidad de {valor}')
+            else:
+                print('La cuenta ingresada no existe')
+
