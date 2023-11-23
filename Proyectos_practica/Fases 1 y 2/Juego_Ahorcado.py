@@ -130,6 +130,7 @@ while True:
 
             if not Logrado and cont == 0:
                 print(f'Has agotado tus intentos.\nLa palabra era: {palabra}')
+                print('Buena suerte a la próxima ;-)')
 
         # Nivel Difícil
         case 3:
@@ -168,3 +169,4 @@ while True:
 
             if not Logrado and cont == 0:
                 print(f'Has agotado tus intentos.\nLa palabra era: {palabra}')
+                print('Buena suerte a la próxima ;-)')
