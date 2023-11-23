@@ -19,6 +19,7 @@ while True:
         
         # Crear cuenta
         case 1:
+            cuentas = [] # lista de cuentas creadas o existentes
             new_count = {}
 
             # escoger tipo de cuenta
@@ -52,10 +53,40 @@ while True:
                 new_count['Saldo'] = 0
                 print('OK, su cuenta se creará sin saldo')
 
+            cuentas.append(new_count)
             print('\nSu cuenta ha sido creada con éxito!')
-            print(f'Los datos de su cuenta son:\nTitular: {new_count["Titular"]}\nCuenta {new_count["Tipo"]}\nSaldo: {new_count["Saldo"]}')
+            print(f"""
+                Los datos de su cuenta son: 
+                ________________________________________
+                              
+                    Titular: {new_count["Titular"]}      
+                    Cuenta {new_count["Tipo"]}           
+                    N° Cuenta: {new_count["No_cuenta"]}  
+                    Saldo: {new_count["Saldo"]}          
+                ________________________________________
+            """)
+            
             continue
 
         # Depósitos
         case 2:
-            pass
+            print('Ingrese el número de cuenta al que quiere depositar: ')
+            cuenta = int(input())
+
+            existe = False
+            for dict in cuentas:
+                if new_count['Cuenta'] == cuenta:
+                    existe = True
+
+            depositado = False
+            while not depositado:    
+                if existe:
+                    try:
+                        valor = int(input('Ingrese la cantidad que quiere depositar: '))
+                        depositado = True
+                    except ValueError:
+                        print('ERROR: Debes ingresar una cantidad válida')
+                        continue
+                    
+                    print('Procesando depósito...\nDepósito realizado con éxito!')
+                    print(f'Se depositó en la cuenta {cuenta} la cantidad de {valor}')
