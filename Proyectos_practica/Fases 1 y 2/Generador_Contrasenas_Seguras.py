@@ -13,33 +13,33 @@ import random
 
 letras_mayusculas = [chr(i) for i in range(65, 91)]  # Del código ASCII 65 (A) al 90 (Z)
 letras_minusculas = [chr(i) for i in range(97, 123)]  # Del código ASCII 97 (a) al 122 (z)
-numeros = [0,1,2,3,4,5,6,7,8,9]
-especiales = ['!','#','%','/','¡','-','.','_','*']
+numeros = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+especiales = ['!', '#', '%', '/', '¡', '-', '.', '_', '*']
 
 while True:
     print('Escoge una opción:\n[1] Generar contraseña\n[2] Salir')
 
     try:
-        opcion = input()
+        opcion = int(input())
     except ValueError:
         print('Opción no válida. Ingresa el número de la opción')
         continue
 
     if opcion == 1:
-        print('Saliste del programa')
-        break
-    # Generar
-    elif opcion == 2:
+        print('Generando contraseña...')
         contrasena = []
 
-        for i in range(10):
-            contrasena.append(letra1 = random.choice(letras_minusculas))
-            contrasena.append(letra2 = random.choice(letras_mayusculas))
-            contrasena.append(num = random.choice(numeros))
-            contrasena.append(espec = random.choice(especiales))
+        for i in range(3):
+            contrasena.append(random.choice(letras_minusculas))
+            contrasena.append(random.choice(letras_mayusculas))
+            contrasena.append(random.choice(numeros))
+            contrasena.append(random.choice(especiales))
 
-            generado = ''.join(contrasena) # contraseña generada
-        print(f'Contraseña generada: --> {generado}')
+        random.shuffle(contrasena)  # Mezcla la contraseña generada
+        generated = ''.join(map(str, contrasena))  # Contraseña generada
+        print(f'Contraseña generada: --> {generated}')
+    elif opcion == 2:
+        print('Saliste del programa')
         break
     else:
         print('Opción no válida')
