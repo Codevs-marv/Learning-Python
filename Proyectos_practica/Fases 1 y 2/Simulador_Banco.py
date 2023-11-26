@@ -71,8 +71,30 @@ while True:
         # Depósito
         case 2:
             print('Ingresa el número de cuenta al que depositarás:')
-            cuenta = int(input())
+            try:
+                cuenta = int(input())
+            except ValueError:
+                print('Debe ingresar un número de cuenta válido')
 
             for cuent in cuentas:
                 if cuent['No_cuenta'] == cuenta:
-                    print('Digite la cantidad que quiere depositar')
+                    while True:
+                        print('Hará un deposito a una cuenta ya regitrada')
+                        print('Digite la cantidad que quiere depositar')
+                        try:
+                            depo = int(input())
+                        except ValueError:
+                            print('Cifra no válida, inténtelo de nuevo')
+                            continue
+                        print(f'Se hizo un deposito de {depo} a la cuenta {cuenta}')
+                        break
+                    break
+                else:
+                    while True:
+                        print('Hará un deposito a una cuenta no registrada, recuerde ingresar bien el número!')
+                        print('Ingrese la cantidad que quiere depositar')
+                        try:
+                            depos = int(input())  
+                        except ValueError:
+                            print('Cifra no válida, inténtelo de nuevo')   
+                            continue               
