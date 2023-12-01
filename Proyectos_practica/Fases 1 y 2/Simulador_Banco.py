@@ -9,7 +9,7 @@ print('B A N C O   S I M U L A D O R')
 cuentas = []  # lista de cuentas creadas o existentes
 
 while True:
-    print('\n¿Qué quieres hacer?\n[1] Crear cuenta\n[2] Depositar\n[3] Retirar\n[4] Consultar saldo')
+    print('\n¿Qué quieres hacer?\n[1] Crear cuenta\n[2] Depositar\n[3] Retirar\n[4] Consultar saldo\n[5] Salir')
 
     try:
         opcion = int(input('Elige una opción: '))
@@ -18,6 +18,12 @@ while True:
         continue
 
     if 1 <= opcion <= 4:
+
+        if opcion == 5:
+            print('Cerrando el simulador')
+            break
+
+
         # CREAR CUENTA
         if opcion == 1:
             new_count = {}
@@ -79,6 +85,7 @@ while True:
                 ________________________________________
             """)
 
+
         # DEPÓSITO
         elif opcion == 2:
             print('Ingresa el número de cuenta al que depositarás:')
@@ -99,7 +106,14 @@ while True:
                             print('Cifra no válida, inténtelo de nuevo')
                             continue
                         cuent['Saldo'] += depo  # Agregar al saldo de la cuenta el depósito
-                        print(f'Se hizo un depósito de ${depo} a la cuenta {cuenta}')
+                        print(f"""
+                            -----------------------------------
+                                COMPROBANTE DE TRANSACCIÓN
+                              
+                                valor depositado: {depo}
+                                destinatario: {cuenta}
+                            -----------------------------------
+                        """)
                         break
                     break
                     # No necesitas el bucle 'else' aquí
@@ -107,6 +121,7 @@ while True:
                 else:
                     print('La cuenta ingresada no está registrada, inténtelo de nuevo')
                     break
+
 
         # RETIRAR
         elif opcion == 3:
@@ -123,16 +138,27 @@ while True:
                     cantidad = int(input())
 
                     if cuent['Saldo'] >= cantidad:
-                        print('Retirando dinero...')
-                        cuent['Saldo'] -= cantidad
-                        print(f'Se retiraron ${cantidad} de la cuenta {cuenta} exitosamente')
-                        exitoso = True
+                        print('Digite la clave: ')
+                        clave = input() 
+
+                        if clave == cuent['Clave']:
+                            print('Retirando dinero...')
+                            cuent['Saldo'] -= cantidad
+                            print(f'Se retiraron ${cantidad} de la cuenta {cuenta} exitosamente')
+                            exitoso = True
+                        else:
+                            print('Clave incorrecta')
+                            print('--TRANSACCIÓN CANCELADA--')
+                        
+                        break  # Salir del bucle después de procesar la cuenta
+
                     else:
                         print('No tiene saldo suficiente, intente con un valor menor')
-                    break
+                        break  # Salir del bucle después de procesar la cuenta
 
             if not exitoso:
                 print('La cuenta ingresada no está registrada, inténtelo de nuevo')
+
 
         # CONSULTAR SALDO
         elif opcion == 4:
