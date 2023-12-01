@@ -6,6 +6,8 @@ import random
 
 print('B A N C O   S I M U L A D O R')
 
+cuentas = []  # lista de cuentas creadas o existentes
+
 while True:
     print('\n¿Qué quieres hacer?\n[1] Crear cuenta\n[2] Depositar\n[3] Retirar\n[4] Consultar saldo')
 
@@ -15,31 +17,42 @@ while True:
         print('Opción no válida')
         continue
 
-    match opcion:
-        
-        # Crear cuenta
-        case 1:
-            cuentas = [] # lista de cuentas creadas o existentes
+    if 1 <= opcion <= 4:
+        # CREAR CUENTA
+        if opcion == 1:
             new_count = {}
 
             # escoger tipo de cuenta
             print('Escoge el tipo de cuenta que quieres crear:\n[1] Cuenta corriente\n[2] Ahorros ')
             try:
-                tipo = int(input('Escoja una opción'))
+                tipo = int(input('Escoja una opción: '))
             except ValueError:
                 print('Opción no válida')
+                continue
 
-            if tipo == 1:
-                new_count['Tipo'] = 'corriente'
-            else:
-                new_count['Tipo'] = 'ahorros'
-            
-            # generar número de cuenta 
-            new_count['No_cuenta'] = random.randint(10**11, (10**12)-1)
+            new_count['Tipo'] = 'corriente' if tipo == 1 else 'ahorros'
+
+            # generar número de cuenta
+            new_count['No_cuenta'] = random.randint(10 ** 11, (10 ** 12) - 1)
 
             # ingresar datos
             print('Ingresa nombre y apellido del titular: ')
             new_count['Titular'] = input()
+
+            # Crear clave
+            while True:
+                print('Ingrese una clave de 4 dígitos para su cuenta')
+                password = input()
+                print('Confirme la clave')
+                confirmed = input()
+
+                if confirmed == password:
+                    print('--> Se ha creado la clave con éxito')
+                    new_count['Clave'] = password
+                    break
+                else:
+                    print('Las claves no coinciden, inténtelo de nuevo')
+                    continue
 
             print('Desea añadir un saldo ahora?\n[1] Si\n[2] No')
             resp = int(input())
@@ -58,43 +71,90 @@ while True:
             print(f"""
                 Los datos de su cuenta son: 
                 ________________________________________
-                              
+                            
                     Titular: {new_count["Titular"]}      
                     Cuenta {new_count["Tipo"]}           
                     N° Cuenta: {new_count["No_cuenta"]}  
-                    Saldo: {new_count["Saldo"]}          
+                    Saldo: ${new_count["Saldo"]}          
                 ________________________________________
             """)
-            
-            continue
 
-        # Depósito
-        case 2:
+        # DEPÓSITO
+        elif opcion == 2:
             print('Ingresa el número de cuenta al que depositarás:')
             try:
                 cuenta = int(input())
             except ValueError:
                 print('Debe ingresar un número de cuenta válido')
+                continue
 
             for cuent in cuentas:
                 if cuent['No_cuenta'] == cuenta:
                     while True:
-                        print('Hará un deposito a una cuenta ya regitrada')
+                        print('Hará un depósito a una cuenta ya registrada')
                         print('Digite la cantidad que quiere depositar')
                         try:
                             depo = int(input())
                         except ValueError:
                             print('Cifra no válida, inténtelo de nuevo')
                             continue
-                        print(f'Se hizo un deposito de {depo} a la cuenta {cuenta}')
+                        cuent['Saldo'] += depo  # Agregar al saldo de la cuenta el depósito
+                        print(f'Se hizo un depósito de ${depo} a la cuenta {cuenta}')
                         break
                     break
+                    # No necesitas el bucle 'else' aquí
+
                 else:
+                    print('La cuenta ingresada no está registrada, inténtelo de nuevo')
+                    break
+
+        # RETIRAR
+        elif opcion == 3:
+            print('Recuerde que solo puede retirar dinero de cuentas ya registradas')
+            print('Ingrese el número de cuenta: ')
+            cuenta = int(input())
+
+            exitoso = False
+
+            for cuent in cuentas:
+                if cuent['No_cuenta'] == cuenta:
+                    print(f'El titular de la cuenta es', cuent['Titular'])
+                    print('Digite la cantidad que quiere retirar: ')
+                    cantidad = int(input())
+
+                    if cuent['Saldo'] >= cantidad:
+                        print('Retirando dinero...')
+                        cuent['Saldo'] -= cantidad
+                        print(f'Se retiraron ${cantidad} de la cuenta {cuenta} exitosamente')
+                        exitoso = True
+                    else:
+                        print('No tiene saldo suficiente, intente con un valor menor')
+                    break
+
+            if not exitoso:
+                print('La cuenta ingresada no está registrada, inténtelo de nuevo')
+
+        # CONSULTAR SALDO
+        elif opcion == 4:
+            print('Recuerde que puede consultar saldos únicamente en cuentas ya registradas previamente')
+            print('\nDigite el número de cuenta: ')
+            cuenta = int(input())
+
+            for cuent in cuentas:
+                if cuent['No_cuenta'] == cuenta:
+                    print(f'El titular de la cuenta es', cuent['Titular'])
+
                     while True:
-                        print('Hará un deposito a una cuenta no registrada, recuerde ingresar bien el número!')
-                        print('Ingrese la cantidad que quiere depositar')
-                        try:
-                            depos = int(input())  
-                        except ValueError:
-                            print('Cifra no válida, inténtelo de nuevo')   
-                            continue               
+                        print('\nIngrese la clave de su cuenta: ')
+                        clave = input()
+
+                        if clave == cuent['Clave']:
+                            print('Clave correcta')
+                            print('Su saldo es $', cuent['Saldo'])
+                            break
+                        else:
+                            print('Clave incorrecta, inténtelo de nuevo')
+                            continue
+
+    else:
+        print('Opción no válida, inténtelo de nuevo')
