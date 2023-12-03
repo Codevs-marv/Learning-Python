@@ -176,7 +176,13 @@ while True:
 
                         if clave == cuent['Clave']:
                             print('Clave correcta')
-                            print('---> Su saldo es $', cuent['Saldo'])
+                            print(f"""
+                                    ----------------------------------
+                                      Titular: {cuent['Titular']}  
+                                      Estado: Activa
+                                      Saldo: ${cuent['Saldo']}
+                                    ----------------------------------
+                            """)
                             break
                         else:
                             print('Clave incorrecta, inténtelo de nuevo')
