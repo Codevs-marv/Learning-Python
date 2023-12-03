@@ -3,10 +3,16 @@
 de archivos o bases de datos para almacenar la información de las cuentas.'''
 
 import random
+import datetime
 
 print('B A N C O   S I M U L A D O R')
 
 cuentas = []  # lista de cuentas creadas o existentes
+fecha_hora_actual = datetime.datetime.now()
+
+# Saber fecha y hora actuales para mostrar en los comprobantes de las transacciones
+fecha = fecha_hora_actual.date()
+hora = datetime.datetime.now().strftime("%H:%M")
 
 while True:
     print('\n¿Qué quieres hacer?\n[1] Crear cuenta\n[2] Depositar\n[3] Retirar\n[4] Consultar saldo\n[5] Salir')
@@ -112,6 +118,7 @@ while True:
                               
                                 valor depositado: ${depo}
                                 destinatario: {cuenta}
+                                {fecha}, {hora}
                             -----------------------------------
                         """)
                         break
@@ -144,7 +151,13 @@ while True:
                         if clave == cuent['Clave']:
                             print('Retirando dinero...')
                             cuent['Saldo'] -= cantidad
-                            print(f'Se retiraron ${cantidad} de la cuenta {cuenta} exitosamente')
+                            print(f"""
+                                    ------------------------------
+                                            -COMPROBANTE-
+                                      Valor retirado = ${cantidad}                                  
+                                      fecha: {fecha}, {hora}
+                                    ------------------------------
+                            """)
                             exitoso = True
                         else:
                             print('Clave incorrecta')
