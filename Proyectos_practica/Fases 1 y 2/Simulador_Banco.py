@@ -118,7 +118,7 @@ while True:
                               
                                 valor depositado: ${depo}
                                 destinatario: {cuenta}
-                                {fecha}, {hora}
+                                    {fecha}, {hora}
                             -----------------------------------
                         """)
                         break
@@ -154,23 +154,24 @@ while True:
                             print(f"""
                                     ------------------------------
                                             -COMPROBANTE-
+                                  
                                       Valor retirado = ${cantidad}                                  
-                                      fecha: {fecha}, {hora}
+                                          {fecha}, {hora}
                                     ------------------------------
                             """)
                             exitoso = True
                         else:
                             print('Clave incorrecta')
-                            print('--TRANSACCIÓN CANCELADA--')
+                            print('--Por su seguridad cancelaremos la transacción--')
                         
                         break  # Salir del bucle después de procesar la cuenta
 
                     else:
-                        print('No tiene saldo suficiente, intente con un valor menor')
+                        print('No tiene saldo suficiente, intente nuevamente con un valor menor')
                         break  # Salir del bucle después de procesar la cuenta
 
             if not exitoso:
-                print('La cuenta ingresada no está registrada, inténtelo de nuevo')
+                print('--TRANSACCIÓN CANCELADA--')
 
 
         # CONSULTAR SALDO
@@ -191,9 +192,13 @@ while True:
                             print('Clave correcta')
                             print(f"""
                                     ----------------------------------
-                                      Titular: {cuent['Titular']}  
-                                      Estado: Activa
-                                      Saldo: ${cuent['Saldo']}
+                                              DATOS CONSULTA
+                                  
+                                         Titular: {cuent['Titular']}  
+                                         Estado: Activa
+                                         Saldo: ${cuent['Saldo']}
+
+                                            {fecha}, {hora}
                                     ----------------------------------
                             """)
                             break
