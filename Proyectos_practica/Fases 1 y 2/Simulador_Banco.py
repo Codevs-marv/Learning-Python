@@ -17,7 +17,7 @@ while True:
         print('Opción no válida')
         continue
 
-    if 1 <= opcion <= 4:
+    if 1 <= opcion <= 5:
 
         if opcion == 5:
             print('Cerrando el simulador')
@@ -110,7 +110,7 @@ while True:
                             -----------------------------------
                                 COMPROBANTE DE TRANSACCIÓN
                               
-                                valor depositado: {depo}
+                                valor depositado: ${depo}
                                 destinatario: {cuenta}
                             -----------------------------------
                         """)
@@ -176,7 +176,7 @@ while True:
 
                         if clave == cuent['Clave']:
                             print('Clave correcta')
-                            print('Su saldo es $', cuent['Saldo'])
+                            print('---> Su saldo es $', cuent['Saldo'])
                             break
                         else:
                             print('Clave incorrecta, inténtelo de nuevo')
