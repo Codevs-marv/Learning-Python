@@ -145,7 +145,7 @@ for i in productos:
 
 
 
-for pin productos:
+for p in productos:
     if (isinstance(p, Adorno)): # --->  isinstance(objeto, clase): verifica si un objeto es de cierta clase
         print(p.referencia, p.nombre)
 
