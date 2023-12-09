@@ -55,3 +55,15 @@ A.split()[0]  # --> ['Hola'] específicar el indice
 ' '.join('Hola')  # --> H o l a
 
 '      marv   '.strip()  # --> 'marv'
+
+
+
+
+
+
+
+
+
+
+#  >>>  T O D O    S O B R E   L I S T A S  <<<  #
+
