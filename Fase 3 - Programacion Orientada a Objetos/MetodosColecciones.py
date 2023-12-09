@@ -111,7 +111,7 @@ lista = [1,2,3,4,5]
 # .difference_upadate(): Actualizar y guardar la diferencia entre dos conjuntos
 # .intersection(): interseca dos conjuntos
 # .intersection_update(): Interseca dos conjuntos y guarda dicho resultado en el primero
-# symetric_difference(): Muestra los elementos diferentes de ambos conjuntos
+# symmetric_difference(): Muestra los elementos diferentes de ambos conjuntos
 
 
 
@@ -139,4 +139,49 @@ c1.union(c2) == c4 # True
 
 c1.update(c2) # ---> c1 = {1,2,3,4,5}
 
-c1.symetric_difference(c2)  # --> {1,2,4,5} (el 3 lo excluye porque está en ambos conjuntos)
+c1.symmetric_difference(c2)  # --> {1,2,4,5} (el 3 lo excluye porque está en ambos conjuntos)
+
+
+
+
+
+
+
+
+
+
+
+
+
+#  >>>  T O D O    S O B R E   D I C C I O N A R I O S  <<<  #
+
+# .get(clave,msg): Devuelve el msg predefinido en el caso especifico en que se llame a esa clave
+# .keys(): Devuelve una lista con las claves del diccionario
+# .values(): Devuelve una lista con los valores del diccionario
+# .items(): Devuelve una lista de tuplas con las claves y valores del dict
+# .pop(clave): Eliminar elemento del diccionario haciendo referencia por su clave
+# .clear(): Vacía el diccionario por completo
+
+
+
+colores = {'amarillo': 'yellow', 'verde':'green','azul':'blue'}
+
+colores['amarillo'] # --> 'yellow'
+colores.get('negro','No se encuentra')
+
+colores.keys()  # --> ['amarillo','verde','azul']
+
+
+
+# mostrar claves
+for c in colores:
+    print(c)
+
+# mostrar valores
+for c in colores:
+    print(colores[c])
+
+# mostrar clave - valor
+for c,v in colores.items():
+    print(c,v)
+
