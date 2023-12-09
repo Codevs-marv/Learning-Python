@@ -196,3 +196,22 @@ print(ad) # --> pvp = $15
 
 
 #  >>>  H E R E N C I A   M U L T I P L E  <<<  #
+
+class A:
+    def __init__(self):
+        print('Soy de clase A')
+    
+    def a(self):
+        print('Este método lo heredo de A')
+
+class B:
+    def __init__(self):
+        print('Soy de clase B')
+
+    def b(self):
+        print('Este método lo heredo de B')
+
+class C(A,B):
+    def c(self):
+        print('Este método lo heredo de C')
+
