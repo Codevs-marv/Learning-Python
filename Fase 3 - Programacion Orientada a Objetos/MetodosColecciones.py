@@ -67,3 +67,76 @@ A.split()[0]  # --> ['Hola'] específicar el indice
 
 #  >>>  T O D O    S O B R E   L I S T A S  <<<  #
 
+# .append(): Añadir elemento
+# .clear(): Vaciar la lista
+# .extend(l2): Unir dos listas
+# .count(): Contar cuantas veces aparece un elemento
+# .index(item): Posicion donde aparece el item indicado
+# .insert(indice,item): Añadir un elemento dentro de la lista en el indice indicado
+# .pop(indice): ELimina el elemento con el indice indicado
+# .remove(item): Elimina el item indicado
+# .reverse(): Poner la lista del revés
+# .sort(): Ordenar la lista en orden ascendente
+# .sort(reverese=True): Ordena la lista en descendente
+
+
+lista = [1,2,3,4,5]
+
+
+
+
+
+
+
+
+
+
+#  >>>   T O D O    S O B R E    C O N J U N T O S   <<<  #
+
+# .add(item): Añadir elemento
+# .discard(item): Eliminar elemento 
+# .copy(): Hacer una copia del conjunto para editarlo sin afectar el original
+# .clear(): Vaciar el conjunto
+# .isdisjoint(): Comprobar si dos conjuntos son disyuntos
+# .issubset(): Comprobar si es un subconjuntos
+# .superset(): Comprobar si es un superconjunto de otro
+
+
+
+#>>> METODOS MAS AVANZADOS <<< #
+
+# .union(): Unir dos conjuntos
+# .update(): Une dos conjuntos y actualiza el primero
+# .difference(): Obtener la diferencia entre dos conjuntos A - B (Elementos que estan en A pero no en B)
+# .difference_upadate(): Actualizar y guardar la diferencia entre dos conjuntos
+# .intersection(): interseca dos conjuntos
+# .intersection_update(): Interseca dos conjuntos y guarda dicho resultado en el primero
+# symetric_difference(): Muestra los elementos diferentes de ambos conjuntos
+
+
+
+
+
+
+c = set() # ---> crear conjunto
+
+c.add(1)
+c.add(2)
+c.add(3)
+c.discard(1)
+c2 = c.copy() # copiar
+
+
+
+c1 = {1,2,3}
+c2 = {3,4,5}
+c3 = {-1,99}
+c4 = {1,2,3,4,5}
+
+c1.isdisjoint(c2)
+
+c1.union(c2) == c4 # True
+
+c1.update(c2) # ---> c1 = {1,2,3,4,5}
+
+c1.symetric_difference(c2)  # --> {1,2,4,5} (el 3 lo excluye porque está en ambos conjuntos)
