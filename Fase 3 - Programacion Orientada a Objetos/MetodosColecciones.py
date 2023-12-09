@@ -78,6 +78,8 @@ A.split()[0]  # --> ['Hola'] específicar el indice
 # .reverse(): Poner la lista del revés
 # .sort(): Ordenar la lista en orden ascendente
 # .sort(reverese=True): Ordena la lista en descendente
+# .copy(): Copiar la lista sin afectar la original
+# [:] --> Copiar la lista sin afectar la original
 
 
 lista = [1,2,3,4,5]
