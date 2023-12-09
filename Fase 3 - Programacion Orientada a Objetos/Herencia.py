@@ -123,7 +123,7 @@ class Libro(Producto):
         AUTOR\t\t{self.autor}"""
 
 
-ad = Adorno(2034, 'vaso adornado', 15,'vaso de porcelana adornado con arboles') # --> crear objeto (adorno)
+ad = Adorno(2034, 'Vaso adornado', 15,'Vaso de porcelana adornado con arboles') # --> crear objeto (adorno)
 
 al = Alimento(2035,'Botella Aceite de oliva Extra',5,"250 mL") # --> crear objeto (alimento)
 al.productor = 'La Aceitera'
@@ -143,6 +143,7 @@ for p in productos:
 for i in productos:
     print(i.referencia, i.nombre) # --> mostrar detalles específicos de los productos
 
+print('\n')
 
 
 for p in productos:
@@ -155,3 +156,43 @@ for p in productos:
     elif (isinstance(p, Libro)):
         print(p.referencia, p.nombre, p.isbn)
 
+
+# Funcion para rebajar precio
+def Rebajar_Producto(p, rebaja):
+    """Devuelve un producto con una rebaja en porcentaje de su precio"""
+
+    p.pvp = p.pvp - (p.pvp/100 * rebaja)
+    return p
+
+al_rebajado = Rebajar_Producto(al, 10) # aplicar la funcion al producto 'al'
+print(al_rebajado)
+
+
+
+#>>> N O T A:
+# Los objetos funcionan por referencia, es decir, cualquier cambio que se les haga así sea reasignandolos como una copia, se tomará ese cambio en el objeto original
+
+
+
+
+
+
+
+# >>>  C O P I A R   O B J E T O S  <<< #
+
+'Copiando los objetos de esta forma es la unica manera de crear cambios sobre la copia sin que se afecte el objeto original'
+
+import copy
+
+copia_adorno = copy.copy(ad) # --> se copió el objeto adorno
+copia_adorno.pvp = 25  # --> cambiamos el precio de la copia
+
+print(copia_adorno) # --> pvp = $25
+print(ad) # --> pvp = $15 
+
+
+
+
+
+
+#  >>>  H E R E N C I A   M U L T I P L E  <<<  #
