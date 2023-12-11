@@ -30,5 +30,4 @@ del(fichero)
 fichero = open('fichero.txt','r')
 texto = fichero.read()
 fichero.close()
-
-print(texto)
+del(fichero)
