@@ -27,11 +27,11 @@
 
 from tkinter import *
 
-root = Tk()
+"""root = Tk()
 root.title('Hola mundo')
 root.iconbitmap('hola.ico')
 root.resizable(True, True)
-root.mainloop()
+root.mainloop()"""
 
 
 
@@ -43,7 +43,7 @@ root.mainloop()
 # .pack(): Colocar el widget en la ventana
 # .config(): Configuraciones especificas para un widget
 
-root = Tk()
+"""root = Tk()
 root.title('Mi primer frame')
 root.resizable(1,1)
 root.iconbitmap('hola.ico')
@@ -64,7 +64,7 @@ root.config(bg='lightblue') # color
 
 
 # Inicia el bucle 
-root.mainloop()
+root.mainloop()"""
 
 
 
@@ -103,7 +103,7 @@ root.mainloop()"""
 # Es una entrada de texto
 
 
-root = Tk()
+"""root = Tk()
 
 
 # Entrada
@@ -124,7 +124,7 @@ entry2.config(show='*') # ocultar lo que estamos ingresando
 label2 = Label(root, text='Contraseña')
 label2.grid(row=1,column=0,sticky='e')
 
-root.mainloop()
+root.mainloop()"""
 
 
 
@@ -134,7 +134,7 @@ root.mainloop()
 
 #>> B U T T O N S
 
-def sumar():
+"""def sumar():
     r.set(float(n1.get()) + float(n2.get()))
     borrar()
 
@@ -178,7 +178,7 @@ Label(root, text='\nResult ->').pack()
 Entry(root, justify='center', textvariable=r, state='disabled').pack() # result
 
 
-root.mainloop()
+root.mainloop()"""
 
 
 
@@ -190,14 +190,17 @@ root.mainloop()
 #>> R A D I O   B U T T O N S
 
 # Funcion para mostrar opcion seleccionada
-def seleccionar():
+"""def seleccionar():
     monitor.config(text='{}'.format(opcion.get()))
 
-
+# Vaciar la opcion seleccionada
+def reset():
+    opcion.set(None)
+    monitor.config(text='')
 
 root = Tk()
 
-opcion = IntVar()
+opcion = IntVar() # opcion seleccionada
 
 Radiobutton(root, text='Opcion 1', variable=opcion, value=1, command=seleccionar).pack()
 Radiobutton(root, text='Opcion 2', variable=opcion, value=2, command=seleccionar).pack()
@@ -205,5 +208,74 @@ Radiobutton(root, text='Opcion 3', variable=opcion, value=3, command=seleccionar
 
 monitor = Label(root)
 monitor.pack()
+
+Button(root, text='Reiniciar', command=reset).pack()
+
+root.mainloop()"""
+
+
+
+
+
+
+
+
+
+#>> C H E C K   B U T T O N S
+
+# onvalue : Valor cuando esta marcado
+# offvalue: Valor cuando está desmarcado
+
+"""def seleccionar():
+    cadena = ''
+    if (leche.get()):
+        cadena += 'Con leche'
+    else:
+        cadena += 'Sin leche'
+
+    if (azucar.get()):
+        cadena += ' y con azucar'
+    else:
+        cadena += ' y sin azucar'
+    
+    monitor.config(text=cadena)
+
+root = Tk()
+root.title('Cafetería')
+root.config(bd=15)
+
+# variables que capturan la opcion escogida ---> (1=si , 0=no)
+leche = IntVar()
+azucar = IntVar()
+
+imagen = PhotoImage(file='imagen.gif')
+Label(root, image=imagen).pack(side='left')
+
+frame = Frame(root)
+frame.pack(side='right')
+
+Label(frame, text='¿Como quieres el café?').pack(anchor='w')
+Checkbutton(frame, text='Con leche', variable=leche, onvalue=1, offvalue=0, command=seleccionar).pack(anchor='w')
+Checkbutton(frame, text='Con azucar', variable=azucar, onvalue=1, offvalue=0, command=seleccionar).pack(anchor='w')
+
+monitor = Label(frame)
+monitor.pack()
+
+root.mainloop()
+"""
+
+
+
+
+
+
+
+#>> M E N U S
+
+root = Tk()
+
+
+
+
 
 root.mainloop()
