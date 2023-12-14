@@ -272,10 +272,85 @@ root.mainloop()
 
 #>> M E N U S
 
-root = Tk()
+# El menú no se empaqueta (.pack()) sino que se añade manualmente al root 
+
+"""root = Tk()
+
+menubar = Menu(root)
+root.config(menu=menubar)
+
+# Menú Archivo
+filemenu = Menu(menubar, tearoff=0)
+#Sub-menús
+filemenu.add_command(label='Nuevo')
+filemenu.add_command(label='Abrir')
+filemenu.add_command(label='Guardar')
+filemenu.add_command(label='Cerrar')
+filemenu.add_separator()
+filemenu.add_command(label='Salir', command=root.quit)
+
+
+# Menú Editar
+editmenu = Menu(menubar, tearoff=0)
+# Sub-menús
+editmenu.add_command(label='Cortar')
+editmenu.add_command(label='Copiar')
+editmenu.add_command(label='Pegar')
+
+
+# Menú Ayuda
+helpmenu = Menu(menubar, tearoff=0)
+# Sub-menús
+helpmenu.add_command(label='Ayuda')
+helpmenu.add_separator()
+helpmenu.add_command(label='Acerca de...')
+
+
+menubar.add_cascade(label='Archivo', menu=filemenu)
+menubar.add_cascade(label='Editar', menu=editmenu)
+menubar.add_cascade(label='Ayuda', menu=helpmenu)
+
+root.mainloop()"""
 
 
 
 
 
-root.mainloop()
+
+
+
+
+#>> P O P U P S
+# (Ventanas emergentes)
+
+# BASICAS
+from tkinter import messagebox 
+
+"""root = Tk()
+
+def test():
+    messagebox.showinfo('Titulo','Hola que mas') # ventana de informacion
+    messagebox.showwarning('ALERTA','Virus en el sistema') # ventaa de advertencia
+    messagebox.showerror('ERROR','El programa no funciona') # ventana de error
+
+    resultado = messagebox.askquestion('Salir','¿Estás seguro que quieres salir sin guardar?')
+    if resultado == 'yes':
+        root.destroy() # cerrar el programa
+
+    resultado = messagebox.askokcancel('Salir','¿Sobreescribir el fichero actual?')
+    if resultado: # if true
+        root.destroy()
+
+    resultado = messagebox.askretrycancel('Reintentar', 'No se puede conectar')
+    if not resultado: # if false
+        root.destroy()
+
+Button(root, text='Click', command=test).pack()
+
+root.mainloop()"""
+
+
+
+
+# AVANZADAS
+
