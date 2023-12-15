@@ -326,11 +326,11 @@ root.mainloop()"""
 # BASICAS
 from tkinter import messagebox 
 
-"""root = Tk()
+root = Tk()
 
 def test():
     messagebox.showinfo('Titulo','Hola que mas') # ventana de informacion
-    messagebox.showwarning('ALERTA','Virus en el sistema') # ventaa de advertencia
+    """messagebox.showwarning('ALERTA','Virus en el sistema') # ventaa de advertencia
     messagebox.showerror('ERROR','El programa no funciona') # ventana de error
 
     resultado = messagebox.askquestion('Salir','¿Estás seguro que quieres salir sin guardar?')
@@ -343,14 +343,38 @@ def test():
 
     resultado = messagebox.askretrycancel('Reintentar', 'No se puede conectar')
     if not resultado: # if false
-        root.destroy()
+        root.destroy()"""
 
 Button(root, text='Click', command=test).pack()
 
-root.mainloop()"""
+
 
 
 
 
 # AVANZADAS
 
+# initialdir: Especificar donde se abre por defecto al 'examinar' los archivos del pc
+# 
+
+from tkinter import colorchooser # --> colores
+from tkinter import filedialog  # --> 
+
+
+def elegir_color():
+    color = colorchooser.askcolor(title='Elige un color') # abre una ventana para esocoger un color
+
+def Examinar():
+    ruta = filedialog.askopenfilename(title='Abrir un archivo', initialdir='C:/',   # abrir las carpetas del pc
+                                    filetypes=(('Archivos de texto', '*.txt'),
+                                               ('Archivos de texto avanzado', '*.txt2'),
+                                               ('Todos los archivos', '*.*'))) 
+    
+    # en 'ruta' se guarda la ruta del archivo que se abre
+
+
+Button(root, text='Color', command=elegir_color).pack()
+Button(root, text='Examinar', command=Examinar).pack()
+
+
+root.mainloop()
