@@ -378,8 +378,10 @@ def Examinar():
 
 # Funcion para guardar un archivo en ruta especificada
 def guardar_archivo():
-    archivo = filedialog.asksaveasfile(title='Guardar un archivo', mode='r+', defaultextension='.txt')
-    
+    archivo = filedialog.asksaveasfile(title='Guardar un archivo', mode='a+', defaultextension='.txt')
+    if archivo is not None:
+        archivo.write('Hola!')
+        archivo.close()
 
 
 
