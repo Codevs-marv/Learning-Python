@@ -27,11 +27,11 @@
 
 from tkinter import *
 
-"""root = Tk()
+root = Tk()
 root.title('Hola mundo')
 root.iconbitmap('hola.ico')
 root.resizable(True, True)
-root.mainloop()"""
+root.mainloop()
 
 
 
@@ -43,7 +43,7 @@ root.mainloop()"""
 # .pack(): Colocar el widget en la ventana
 # .config(): Configuraciones especificas para un widget
 
-"""root = Tk()
+root = Tk()
 root.title('Mi primer frame')
 root.resizable(1,1)
 root.iconbitmap('hola.ico')
@@ -64,7 +64,7 @@ root.config(bg='lightblue') # color
 
 
 # Inicia el bucle 
-root.mainloop()"""
+root.mainloop()
 
 
 
@@ -75,7 +75,7 @@ root.mainloop()"""
 #>> L A B E L S
 
 # Configuracion raiz
-"""root = Tk()
+root = Tk()
 
 # Configuracion de un marco
 frame2 = Frame(root, width=480,height=320)
@@ -89,7 +89,7 @@ label.config(bg='green',fg='white',font=('Verdana',24))
 
 
 # Bucle de la interfaz
-root.mainloop()"""
+root.mainloop()
 
 
 
@@ -103,7 +103,7 @@ root.mainloop()"""
 # Es una entrada de texto
 
 
-"""root = Tk()
+root = Tk()
 
 
 # Entrada
@@ -124,7 +124,7 @@ entry2.config(show='*') # ocultar lo que estamos ingresando
 label2 = Label(root, text='Contraseña')
 label2.grid(row=1,column=0,sticky='e')
 
-root.mainloop()"""
+root.mainloop()
 
 
 
@@ -134,7 +134,7 @@ root.mainloop()"""
 
 #>> B U T T O N S
 
-"""def sumar():
+def sumar():
     r.set(float(n1.get()) + float(n2.get()))
     borrar()
 
@@ -178,7 +178,7 @@ Label(root, text='\nResult ->').pack()
 Entry(root, justify='center', textvariable=r, state='disabled').pack() # result
 
 
-root.mainloop()"""
+root.mainloop()
 
 
 
@@ -190,7 +190,7 @@ root.mainloop()"""
 #>> R A D I O   B U T T O N S
 
 # Funcion para mostrar opcion seleccionada
-"""def seleccionar():
+def seleccionar():
     monitor.config(text='{}'.format(opcion.get()))
 
 # Vaciar la opcion seleccionada
@@ -211,7 +211,7 @@ monitor.pack()
 
 Button(root, text='Reiniciar', command=reset).pack()
 
-root.mainloop()"""
+root.mainloop()
 
 
 
@@ -226,7 +226,7 @@ root.mainloop()"""
 # onvalue : Valor cuando esta marcado
 # offvalue: Valor cuando está desmarcado
 
-"""def seleccionar():
+def seleccionar():
     cadena = ''
     if (leche.get()):
         cadena += 'Con leche'
@@ -262,7 +262,7 @@ monitor = Label(frame)
 monitor.pack()
 
 root.mainloop()
-"""
+
 
 
 
@@ -274,7 +274,7 @@ root.mainloop()
 
 # El menú no se empaqueta (.pack()) sino que se añade manualmente al root 
 
-"""root = Tk()
+root = Tk()
 
 menubar = Menu(root)
 root.config(menu=menubar)
@@ -310,7 +310,7 @@ menubar.add_cascade(label='Archivo', menu=filemenu)
 menubar.add_cascade(label='Editar', menu=editmenu)
 menubar.add_cascade(label='Ayuda', menu=helpmenu)
 
-root.mainloop()"""
+root.mainloop()
 
 
 
@@ -330,7 +330,7 @@ root = Tk()
 
 def test():
     messagebox.showinfo('Titulo','Hola que mas') # ventana de informacion
-    """messagebox.showwarning('ALERTA','Virus en el sistema') # ventaa de advertencia
+    messagebox.showwarning('ALERTA','Virus en el sistema') # ventaa de advertencia
     messagebox.showerror('ERROR','El programa no funciona') # ventana de error
 
     resultado = messagebox.askquestion('Salir','¿Estás seguro que quieres salir sin guardar?')
@@ -343,7 +343,7 @@ def test():
 
     resultado = messagebox.askretrycancel('Reintentar', 'No se puede conectar')
     if not resultado: # if false
-        root.destroy()"""
+        root.destroy()
 
 Button(root, text='Click', command=test).pack()
 
