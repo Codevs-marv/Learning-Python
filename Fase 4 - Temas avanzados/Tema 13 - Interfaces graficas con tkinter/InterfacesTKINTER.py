@@ -355,15 +355,18 @@ Button(root, text='Click', command=test).pack()
 # AVANZADAS
 
 # initialdir: Especificar donde se abre por defecto al 'examinar' los archivos del pc
-# 
+# filetypes: Filtro por tipo de archivo al examinar las carpetas del pc
 
 from tkinter import colorchooser # --> colores
 from tkinter import filedialog  # --> 
 
 
+# Funcion para elegir un color
 def elegir_color():
     color = colorchooser.askcolor(title='Elige un color') # abre una ventana para esocoger un color
 
+
+# Funcion para examinar las carpetas del pc
 def Examinar():
     ruta = filedialog.askopenfilename(title='Abrir un archivo', initialdir='C:/',   # abrir las carpetas del pc
                                     filetypes=(('Archivos de texto', '*.txt'),
@@ -373,8 +376,16 @@ def Examinar():
     # en 'ruta' se guarda la ruta del archivo que se abre
 
 
+# Funcion para guardar un archivo en ruta especificada
+def guardar_archivo():
+    archivo = filedialog.asksaveasfile(title='Guardar un archivo', mode='r+', defaultextension='.txt')
+    
+
+
+
+
 Button(root, text='Color', command=elegir_color).pack()
 Button(root, text='Examinar', command=Examinar).pack()
-
+Button(root, text='Guardar', command=guardar_archivo).pack()
 
 root.mainloop()
