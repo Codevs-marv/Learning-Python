@@ -18,3 +18,22 @@ class Clientes:
             if cliente.cc == cc:
                 return cliente
             
+    @staticmethod
+    def crear(cc, nombre, apellido):
+        cliente = Cliente(cc, nombre, apellido)
+        Clientes.lista.append(cliente)
+        return cliente
+    
+    @staticmethod
+    def modificar(cc, nombre, apellido):
+        for indice,cliente in enumerate(Clientes.lista):
+            if cliente.cc == cc:
+                Clientes.lista[indice].nombre = nombre
+                Clientes.lista[indice].apellido = apellido
+                return Clientes.lista[indice]
+            
+    @staticmethod
+    def borrar(cc):
+        for indice,cliente in enumerate(Clientes.lista):
+            if cliente.cc == cc:
+                return Clientes.lista.pop(indice)
