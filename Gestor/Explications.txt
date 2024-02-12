@@ -1,0 +1,13 @@
+EXPLICACIÓN ARCHIVOS
+
+>  run.py:
+Es el script que pondrá en marcha el programa, es lo que se conoce como el ficehro principal.
+
+>  helpers.py:
+Basicamente contendrá funciones auxiliares de uso general en todo el proyecto.
+
+>  database.py:
+Este fichero controlará los datos y proveerá una interfaz para crea, modificar y borrar informacion.
+
+>  menu.py:
+Esta será la interfaz, es el que unirá en el programa principal 'run.py' a través del menu se interactuará con la base de datos.
