@@ -14,6 +14,7 @@ def iniciar():
         print('[4] Modificar un cliente')
         print('[5] Borrar un cliente')
         print('[6] Cerrar el gestor')
+        print('_________________________\n')
 
         opcion = input('> ')
         os.system('cls')
