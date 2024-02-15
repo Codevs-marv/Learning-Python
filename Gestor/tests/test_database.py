@@ -1,4 +1,5 @@
 import copy
+import helpers
 import unittest
 import database as db
 
@@ -35,3 +36,9 @@ class TestDatabase(unittest.TestCase):
         cliente_rebuscado = db.Clientes.buscar('13B')
         self.assertEqual(cliente_borrado.cc, '13B')
         self.assertIsNone(cliente_rebuscado)
+
+    def test_cc_valido(self):
+        self.assertTrue(helpers.cc_valido('00A', db.Clientes.lista))
+        self.assertFalse(helpers.cc_valido('234234n', db.Clientes.lista))
+        self.assertFalse(helpers.cc_valido('F35', db.Clientes.lista))
+        self.assertFalse(helpers.cc_valido('14C', db.Clientes.lista))
