@@ -1,4 +1,6 @@
 import copy
+import csv
+import config
 import helpers
 import unittest
 import database as db
@@ -42,3 +44,18 @@ class TestDatabase(unittest.TestCase):
         self.assertFalse(helpers.cc_valido('234234n', db.Clientes.lista))
         self.assertFalse(helpers.cc_valido('F35', db.Clientes.lista))
         self.assertFalse(helpers.cc_valido('14C', db.Clientes.lista))
+
+
+    def test_escritura_csv(self):
+        db.Clientes.borrar('12A')
+        db.Clientes.borrar('13B')
+        db.Clientes.modificar('14C', 'Mariana', 'Garcia')
+
+        cc, nombre, apellido = None, None, None
+        with open(config.DATABASE_PATH, newline='\n') as fichero:
+            reader = csv.reader(fichero, delimiter=';')
+            cc, nombre, apellido = next(reader)
+
+        self.assertEqual(cc, '14C')
+        self.assertEqual(nombre, 'Mariana')
+        self.assertEqual(apellido, 'Garcia')
